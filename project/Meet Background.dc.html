@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<meta name="design_doc_mode" content="canvas">
+<script src="./image-slot.js"></script>
+<style>body{margin:0;background:#E9EDEA;font-family:'IBM Plex Sans',Helvetica,sans-serif}a{color:#1F7346}a:hover{color:#165835}</style>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&display=swap">
+</helmet>
+<section style="display:flex;flex-wrap:wrap;gap:80px;padding:80px">
+  <div id="1a" style="display:flex;flex-direction:column;gap:20px">
+    <div style="font-size:24px;font-weight:600;color:#1E2320">1a · Light (pre-mirrored)</div>
+    <div data-screen-label="Meet light" style="position:relative;width:1920px;height:1080px;background:#FFFFFF;overflow:hidden;transform:scaleX(-1)">
+      <div style="position:absolute;right:-180px;top:-180px;width:720px;height:720px;border:3px solid #CBD4CE;border-radius:50%"></div>
+      <div style="position:absolute;right:-60px;top:-60px;width:480px;height:480px;border:3px solid #1F7346;border-radius:50%;opacity:0.35"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;height:12px;background:#1F7346"></div>
+      <div style="position:absolute;left:96px;top:80px;width:420px;height:160px">
+        <image-slot id="meet-logo-light" shape="rect" fit="contain" placeholder="Drop primary logo (PNG/SVG)"></image-slot>
+      </div>
+      <div style="position:absolute;left:112px;top:264px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:22px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#1F7346">An Ecosystem Builder</div>
+        <div style="font-size:22px;color:#4F5A54">www.waelaltorabi.me</div>
+      </div>
+    </div>
+  </div>
+  <div id="1b" style="display:flex;flex-direction:column;gap:20px">
+    <div style="font-size:24px;font-weight:600;color:#1E2320">1b · Dark (pre-mirrored)</div>
+    <div data-screen-label="Meet dark" style="position:relative;width:1920px;height:1080px;background:#1E2320;overflow:hidden;transform:scaleX(-1)">
+      <div style="position:absolute;right:-180px;top:-180px;width:720px;height:720px;border:3px solid #2E3732;border-radius:50%"></div>
+      <div style="position:absolute;right:-60px;top:-60px;width:480px;height:480px;border:3px solid #1F7346;border-radius:50%"></div>
+      <div style="position:absolute;left:0;right:0;bottom:0;height:12px;background:#1F7346"></div>
+      <div style="position:absolute;left:96px;top:80px;width:420px;height:160px">
+        <image-slot id="meet-logo-dark" shape="rect" fit="contain" placeholder="Drop negative logo (PNG/SVG)"></image-slot>
+      </div>
+      <div style="position:absolute;left:112px;top:264px;display:flex;flex-direction:column;gap:8px">
+        <div style="font-size:22px;font-weight:600;letter-spacing:0.08em;text-transform:uppercase;color:#6FC79A">An Ecosystem Builder</div>
+        <div style="font-size:22px;color:#C9D1CC">www.waelaltorabi.me</div>
+      </div>
+    </div>
+  </div>
+</section>
+</x-dc>
+</body>
+</html>

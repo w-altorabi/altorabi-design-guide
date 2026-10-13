@@ -1,0 +1,1124 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<template id="__bundler_thumbnail">
+  <svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg">
+    <rect width="120" height="120" fill="#1F7346"/>
+    <text x="60" y="70" font-family="sans-serif" font-size="48" font-weight="700" fill="#FFFFFF" text-anchor="middle">A</text>
+  </svg>
+</template>
+
+<helmet>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+  @font-face{font-family:"STC";src:url("fonts/STC-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+  @font-face{font-family:"STC";src:url("fonts/STC-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+  @font-face{font-family:"STC";src:url("fonts/STC-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+  body{margin:0;background:#FFFFFF;color:#1E2320;font-family:"STC","IBM Plex Sans",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:#1F7346;text-decoration:none}
+  a:hover{color:#1E2320;text-decoration:underline}
+  [dir="rtl"]{font-family:"STC","IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;line-height:1.75}
+  [dir="rtl"] *{letter-spacing:normal !important}
+  :focus-visible{outline:2px solid #1F7346;outline-offset:2px}
+  @media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
+</style>
+</helmet>
+
+<div style="max-width:1180px;margin:0 auto;padding:0 24px 96px">
+
+  <header style="display:flex;flex-wrap:wrap;gap:32px;justify-content:space-between;align-items:flex-end;padding:64px 0 32px;border-bottom:1px solid #E1E7E2">
+    <div style="max-width:640px">
+      <div style="font-size:11px;line-height:1.35;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:16px">Altorabi · Design Guide v1.0</div>
+      <h1 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:44px;line-height:1.02;letter-spacing:-0.03em;margin:0 0 16px">The design guide</h1>
+      <p style="font-size:17px;line-height:1.6;color:#4F5A54;margin:0;max-width:68ch">Components, illustration and application design, built on the Altorabi Brand Book v3.0. This document is the reference implementation: brand book §01–§11 states the rules, this states what they look like when built. Where the two differ, the brand book wins.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:8px;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.65;color:#66716B">
+      <div>Source · Altorabi Brand Book v3.0</div>
+      <div>Base · shadcn/ui, re-skinned</div>
+      <div>Target · WCAG 2.2 AA, EN LTR + AR RTL</div>
+    </div>
+  </header>
+
+  <nav style="display:flex;flex-wrap:wrap;gap:8px;padding:24px 0 48px;border-bottom:1px solid #E1E7E2;margin-bottom:64px">
+    <a href="#use" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">01 How to use</a>
+    <a href="#logo" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">02 The logo</a>
+    <a href="#color" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">03 Colour</a>
+    <a href="#type" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">04 Type</a>
+    <a href="#shape" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">05 Space &amp; shape</a>
+    <a href="#components" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">06 Components</a>
+    <a href="#illustration" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">07 Illustration</a>
+    <a href="#charts" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">08 Charts</a>
+    <a href="#app" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">09 App design</a>
+    <a href="#rtl" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">10 Arabic &amp; RTL</a>
+    <a href="#a11y" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">11 Accessibility</a>
+    <a href="#voice" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">12 Voice</a>
+    <a href="#tokens" style="font-size:13.5px;font-weight:500;padding:8px 12px;border:1px solid #CBD4CE;border-radius:6px;color:#1E2320">13 Tokens</a>
+  </nav>
+
+  <section id="use" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">01</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">How to use this with an AI model</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">Paste the brand book, then this guide, then the request. The brand book carries the rules and the token values; this guide carries the shapes. Neither is a suggestion.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px;margin-bottom:32px">
+      <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">Copy tokens verbatim</div>
+        <p style="font-size:13.5px;line-height:1.5;color:#4F5A54;margin:0">Take the §12 block whole. Never adjust a value, never add a grey, never introduce a hue that is not there.</p>
+      </div>
+      <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">Build bilingual first</div>
+        <p style="font-size:13.5px;line-height:1.5;color:#4F5A54;margin:0">Logical properties, <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">t()</span> on every string, both directions from the first commit. Retrofitting RTL is a rewrite.</p>
+      </div>
+      <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">Name your gaps</div>
+        <p style="font-size:13.5px;line-height:1.5;color:#4F5A54;margin:0">Where the system is silent, pick a sensible default, say you chose it, and do not present it as part of the brand.</p>
+      </div>
+    </div>
+    <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+      <div style="display:flex;gap:16px;padding:16px 24px;background:#F1F4F2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">
+        <div style="flex:0 0 200px">The three failures</div>
+        <div style="flex:1">Why it fails</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.5">
+        <div style="flex:0 0 200px;font-weight:600">Brand green as text</div>
+        <div style="flex:1;color:#4F5A54">#64C379 on white measures 2.18:1. Text green is #1F7346 at 5.83:1.</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.5">
+        <div style="flex:0 0 200px;font-weight:600">Tracking on Arabic</div>
+        <div style="flex:1;color:#4F5A54">Arabic letters join. Letter-spacing severs them and words come apart.</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:16px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.5">
+        <div style="flex:0 0 200px;font-weight:600">Colour-only status</div>
+        <div style="flex:1;color:#4F5A54">Roughly one man in twelve cannot separate the amber from the green. Always an icon and a word.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="logo" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">02</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">The logo</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">A portrait mark and a signature wordmark, locked together. The green stroke through the hair is part of the mark, not an accent that can be recoloured. Five approved variants — nothing outside this set.</p>
+
+    <div style="border:1px solid #E1E7E2;border-radius:14px;overflow:hidden;margin-bottom:24px">
+      <div style="padding:16px 24px;border-bottom:1px solid #E1E7E2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">The approved set</div>
+      <img src="assets/logo-variants.jpg" alt="Altorabi logo variants: primary logo, primary logo with tagline, wordmark, symbol, and the negative versions on a dark ground" style="display:block;width:100%;height:auto">
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:32px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">Primary</div>
+        <p style="font-size:13.5px;line-height:1.55;color:#4F5A54;margin:0">Portrait plus signature, horizontal lockup. The default everywhere it fits.</p>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">Primary + tagline</div>
+        <p style="font-size:13.5px;line-height:1.55;color:#4F5A54;margin:0">"An Ecosystem Builder" on a green bar. First impressions only — decks, covers, signage. Not in product UI.</p>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">Wordmark</div>
+        <p style="font-size:13.5px;line-height:1.55;color:#4F5A54;margin:0">Signature alone, for narrow spaces and anywhere the portrait would drop below its minimum size.</p>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">Symbol</div>
+        <p style="font-size:13.5px;line-height:1.55;color:#4F5A54;margin:0">Portrait alone, for avatars, favicons and app icons. Only where the name is already established.</p>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">Negative</div>
+        <p style="font-size:13.5px;line-height:1.55;color:#4F5A54;margin:0">White portrait and wordmark for dark grounds. The green may stay on the hair stroke or drop out entirely.</p>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:32px">
+      <div style="border:1px solid #E1E7E2;border-radius:14px;overflow:hidden">
+        <div style="padding:16px 24px;border-bottom:1px solid #E1E7E2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">Negative, on grey</div>
+        <img src="assets/logo-negative-pair.jpg" alt="Negative logo with green hair stroke, and fully white, both on a mid-grey ground" style="display:block;width:100%;height:auto">
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:14px;overflow:hidden">
+        <div style="padding:16px 24px;border-bottom:1px solid #E1E7E2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">One-colour, on saturated grounds</div>
+        <img src="assets/logo-on-colour.jpg" alt="Single-colour dark logo on yellow, orange and teal backgrounds" style="display:block;width:100%;height:auto">
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Clear space and size</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Clear space on all four sides equals the cap height of "Altorabi". Nothing enters it.</li>
+          <li>Primary lockup: 120px minimum on screen, 30mm in print.</li>
+          <li>Symbol: 32px minimum. Below that, the beard and brow detail fills in.</li>
+          <li>Below 120px, switch to the wordmark rather than shrinking the portrait.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #CBD4CE;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Placement</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>The logo never mirrors in Arabic layouts. It sits at the start of the reading direction.</li>
+          <li>On photographs, use the negative variant over a flat dark area — never over busy detail.</li>
+          <li>One logo per surface. It does not repeat as a pattern or watermark.</li>
+        </ul>
+      </div>
+      <div style="background:#FAE7E7;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Misuse</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Do not stretch, rotate, outline or add a shadow.</li>
+          <li>Do not recolour the portrait or the signature to a hue outside the palette.</li>
+          <li>Do not reset the wordmark in another typeface — it is drawn lettering, not live text.</li>
+          <li>Do not separate the portrait from the signature to build a new lockup.</li>
+          <li>Do not place the full-colour logo on a mid-tone where the dark ink falls below 4.5:1.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="color" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">03</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Colour</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">Green is identity, not success. It appears on primary buttons whether or not anything passed.</p>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:16px;margin-bottom:48px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+        <div style="height:104px;background:#64C379;display:flex;align-items:flex-end;padding:12px"><span style="font-size:13.5px;font-weight:600;color:#2A2A33">Fill only</span></div>
+        <div style="padding:16px"><div style="font-size:13.5px;font-weight:600">Brand green</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:4px">#64C379 · --green</div></div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+        <div style="height:104px;background:#1F7346;display:flex;align-items:flex-end;padding:12px"><span style="font-size:13.5px;font-weight:600;color:#FFFFFF">5.83:1</span></div>
+        <div style="padding:16px"><div style="font-size:13.5px;font-weight:600">Green ink</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:4px">#1F7346 · --green-ink</div></div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+        <div style="height:104px;background:#2A2A33"></div>
+        <div style="padding:16px"><div style="font-size:13.5px;font-weight:600">Charcoal</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:4px">#2A2A33 · --char</div></div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+        <div style="height:104px;background:#1A1B21"></div>
+        <div style="padding:16px"><div style="font-size:13.5px;font-weight:600">Night</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:4px">#1A1B21 · --night</div></div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+        <div style="height:104px;background:#E6F3EA"></div>
+        <div style="padding:16px"><div style="font-size:13.5px;font-weight:600">Green wash</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:4px">#E6F3EA · --green-wash</div></div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+        <div style="height:104px;background:#F1F4F2"></div>
+        <div style="padding:16px"><div style="font-size:13.5px;font-weight:600">Mist</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:4px">#F1F4F2 · --surface</div></div>
+      </div>
+    </div>
+
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 24px">The three green laws, shown</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:48px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="display:flex;gap:12px;margin-bottom:16px">
+          <div style="flex:1;background:#FFFFFF;border:1px solid #E1E7E2;border-radius:6px;padding:16px;text-align:center"><span style="color:#64C379;font-size:15.5px;font-weight:600">Portfolio</span><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#B32228;margin-top:8px">✕ 2.18:1</div></div>
+          <div style="flex:1;background:#FFFFFF;border:1px solid #E1E7E2;border-radius:6px;padding:16px;text-align:center"><span style="color:#1F7346;font-size:15.5px;font-weight:600">Portfolio</span><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#0A7E3A;margin-top:8px">✓ 5.83:1</div></div>
+        </div>
+        <div style="font-size:13.5px;line-height:1.5;color:#4F5A54">Brand green is a fill. Green text is Green Ink. On night grounds the brand green returns to 7.87:1 and may be text there.</div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="display:flex;gap:12px;margin-bottom:16px;align-items:center">
+          <button style="font-family:inherit;font-size:13.5px;font-weight:600;padding:10px 16px;min-height:44px;border-radius:6px;border:1px solid #E1E7E2;background:#FFFFFF;color:#1E2320;outline:2px solid #64C379;outline-offset:2px">Invisible ring</button>
+          <button style="font-family:inherit;font-size:13.5px;font-weight:600;padding:10px 16px;min-height:44px;border-radius:6px;border:1px solid #E1E7E2;background:#FFFFFF;color:#1E2320;outline:2px solid #1F7346;outline-offset:2px">Focus ring</button>
+        </div>
+        <div style="font-size:13.5px;line-height:1.5;color:#4F5A54">Focus needs 3:1. The ring is Green Ink on light, #7FD094 on dark. Never the brand green.</div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="display:flex;gap:12px;margin-bottom:16px;flex-wrap:wrap">
+          <span style="display:inline-flex;align-items:center;gap:6px;background:#64C379;color:#2A2A33;font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:6px">Identity · 6.51:1</span>
+          <span style="display:inline-flex;align-items:center;gap:6px;background:#E4F3E9;color:#0A7E3A;font-size:13.5px;font-weight:600;padding:8px 14px;border-radius:999px">✓ Success</span>
+        </div>
+        <div style="font-size:13.5px;line-height:1.5;color:#4F5A54">Text on brand green is always dark charcoal. Success is its own darker step, #0A7E3A.</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 24px">Neutrals — three text weights, no more</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:48px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px;background:#FFFFFF">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:16px">Light</div>
+        <div style="color:#1E2320;font-size:17px;line-height:1.6;margin-bottom:8px">--ink · body and headings · 15.95:1</div>
+        <div style="color:#4F5A54;font-size:15.5px;line-height:1.55;margin-bottom:8px">--ink-2 · secondary and descriptions · 7.18:1</div>
+        <div style="color:#66716B;font-size:13.5px;line-height:1.5">--ink-3 · labels, captions, metadata · 5.07:1</div>
+      </div>
+      <div style="border:1px solid #2B2F31;border-radius:10px;padding:24px;background:#131519">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#8B968F;margin-bottom:16px">Dark</div>
+        <div style="color:#E9EFE9;font-size:17px;line-height:1.6;margin-bottom:8px">--ink · body and headings · 15.66:1</div>
+        <div style="color:#AAB5AE;font-size:15.5px;line-height:1.55;margin-bottom:8px">--ink-2 · secondary and descriptions · 8.64:1</div>
+        <div style="color:#8B968F;font-size:13.5px;line-height:1.5">--ink-3 · labels, captions, metadata · 5.97:1</div>
+      </div>
+    </div>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 48px">Never use <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">opacity</span> to make text quieter — it breaks the measured ratio. Step down to --ink-2 or --ink-3 instead.</p>
+
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 24px">Status — reserved, never decorative</h3>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:16px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:20px;background:#E4F3E9">
+        <div style="color:#0A7E3A;font-size:15.5px;font-weight:600;margin-bottom:8px">✓ Success</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4F5A54">#0A7E3A · 5.17:1<br>dark #67D283 · 9.68:1</div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:20px;background:#F8EFDC">
+        <div style="color:#935B00;font-size:15.5px;font-weight:600;margin-bottom:8px">! Warning</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4F5A54">#935B00 · 5.62:1<br>dark #F2AF48 · 9.57:1</div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:20px;background:#FAEBE0">
+        <div style="color:#AF4803;font-size:15.5px;font-weight:600;margin-bottom:8px">▲ Serious</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4F5A54">#AF4803 · 5.60:1<br>dark #F99262 · 8.11:1</div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:20px;background:#FAE7E7">
+        <div style="color:#B32228;font-size:15.5px;font-weight:600;margin-bottom:8px">✕ Critical</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#4F5A54">#B32228 · 6.61:1<br>dark #F97770 · 6.88:1</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="type" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">04</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Typography</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">STC is the single bilingual family, covering Latin and Arabic in one face at Light 300, Regular 400 and Bold 700. IBM Plex Mono stays for figures and code, where STC has no tabular set. Two families, no third. Do not substitute Inter, Poppins or Space Grotesk.</p>
+
+    <div style="border:1px solid #E1E7E2;border-radius:14px;padding:32px;margin-bottom:32px">
+      <div style="border-bottom:1px solid #E1E7E2;padding-bottom:24px;margin-bottom:24px">
+        <div style="display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;margin-bottom:12px"><span style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">Display · STC Bold 700 · 44–60 / 1.02 / −0.03em</span></div>
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:52px;line-height:1.02;letter-spacing:-0.03em">Evidence, then the claim</div>
+      </div>
+      <div style="border-bottom:1px solid #E1E7E2;padding-bottom:24px;margin-bottom:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:12px">H1 32 / 1.10 · H2 24 / 1.15 · H3 18 / 1.25 · all Bold 700</div>
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin-bottom:8px">Nine sections, forty documents</div>
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin-bottom:8px">Governance and the data room</div>
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em">Board resolutions</div>
+      </div>
+      <div style="border-bottom:1px solid #E1E7E2;padding-bottom:24px;margin-bottom:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:12px">Body large 17 / 1.60 · Body 15.5 / 1.55 · Small 13.5 / 1.50 · Regular 400</div>
+        <p style="font-size:17px;line-height:1.6;margin:0 0 8px;max-width:68ch">Running text stops at about 68 characters. Set max-width:68ch on prose containers.</p>
+        <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;margin:0 0 8px;max-width:68ch">Body copy is STC Regular 400 at 15.5px with 1.55 line-height, in --ink for primary text and --ink-2 for description.</p>
+        <p style="font-size:13.5px;line-height:1.5;color:#66716B;margin:0;max-width:68ch">Small is for captions and helper text, in --ink-3.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:24px">
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:12px">Label 11 / 700 / +0.07em</div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346">Portfolio company</div>
+        </div>
+        <div>
+          <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:12px">Mono 12–13 / tabular</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:13px;line-height:1.65;font-variant-numeric:tabular-nums">SAR 12,480,000<br>SAR&nbsp;&nbsp;&nbsp;&nbsp;940,250</div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:32px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:16px">English · STC Regular 15.5 / 1.55</div>
+        <p style="font-size:15.5px;line-height:1.55;margin:0">Nine sections and roughly forty documents, ready for a first close in 2026.</p>
+      </div>
+      <div dir="rtl" style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;color:#1F7346;margin-bottom:16px">العربية · 16.5 / 1.75</div>
+        <p style="font-size:16.5px;line-height:1.75;margin:0">تسعة أقسام وما يقارب أربعين مستنداً، جاهزة للإغلاق الأول في 2026.</p>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E1E7E2;border-radius:14px;padding:32px;margin-bottom:32px">
+      <div style="font-size:11px;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:24px">STC · the three shipped weights</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px">
+        <div>
+          <div style="font-weight:300;font-size:30px;line-height:1.2;margin-bottom:8px">Altorabi Holding</div>
+          <div dir="rtl" style="font-weight:300;font-size:30px;line-height:1.45;margin-bottom:12px">الترابي القابضة</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">Light 300 · display only, never body</div>
+        </div>
+        <div>
+          <div style="font-weight:400;font-size:30px;line-height:1.2;margin-bottom:8px">Altorabi Holding</div>
+          <div dir="rtl" style="font-weight:400;font-size:30px;line-height:1.45;margin-bottom:12px">الترابي القابضة</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">Regular 400 · all body and UI text</div>
+        </div>
+        <div>
+          <div style="font-weight:700;font-size:30px;line-height:1.2;margin-bottom:8px">Altorabi Holding</div>
+          <div dir="rtl" style="font-weight:700;font-size:30px;line-height:1.45;margin-bottom:12px">الترابي القابضة</div>
+          <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">Bold 700 · headings, labels, buttons</div>
+        </div>
+      </div>
+      <p style="font-size:13.5px;line-height:1.5;color:#4F5A54;margin:24px 0 0;max-width:68ch;border-top:1px solid #E1E7E2;padding-top:20px">There is no 500 or 600. Where a component in this guide reads <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">font-weight:600</span>, the browser renders STC Bold — that is intended. Never let a renderer synthesise the missing weights.</p>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Always</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.6;color:#4F5A54">
+          <li>Western numerals 0 1 2 3 in both languages.</li>
+          <li>tabular-nums wherever digits align in a column.</li>
+          <li>Arabic at +1px and +0.2 line-height.</li>
+          <li>Arabic face applied by direction, not by class.</li>
+        </ul>
+      </div>
+      <div style="background:#FAE7E7;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Never</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.6;color:#4F5A54">
+          <li>letter-spacing on Arabic, in any amount.</li>
+          <li>text-transform: uppercase on Arabic — it silently does nothing.</li>
+          <li>A third typeface, faux bold, faux italic, or synthesised 500 / 600 weights.</li>
+          <li>Arabic-Indic digits ٠١٢٣ in interfaces.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #CBD4CE;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Working with STC</div>
+        <p style="font-size:13.5px;line-height:1.6;color:#4F5A54;margin:0">Adopted at the client's direction, superseding §03 of the brand book. Three weights ship — 300 / 400 / 700 — so there is no 500 or 600: emphasis goes straight from Regular to Bold, and any UI that wanted a semibold uses Bold. Confirm the licence covers web embedding and product use, and confirm Latin accent coverage before shipping a European locale. Figures are not tabular, so columns of numbers stay in IBM Plex Mono.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="shape" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">05</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Space, shape, elevation</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">Not everything is a card. Border, fill, radius and shadow each announce "separate object" — spend them by role.</p>
+
+    <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px;margin-bottom:24px">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:20px">Spacing · 4px grid · these eight values only</div>
+      <div style="display:flex;align-items:flex-end;gap:16px;flex-wrap:wrap">
+        <div style="text-align:center"><div style="width:4px;height:4px;background:#1F7346"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">4</div></div>
+        <div style="text-align:center"><div style="width:8px;height:8px;background:#1F7346"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">8</div></div>
+        <div style="text-align:center"><div style="width:12px;height:12px;background:#1F7346"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">12</div></div>
+        <div style="text-align:center"><div style="width:16px;height:16px;background:#1F7346"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">16</div></div>
+        <div style="text-align:center"><div style="width:24px;height:24px;background:#1F7346"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">24</div></div>
+        <div style="text-align:center"><div style="width:32px;height:32px;background:#1F7346"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">32</div></div>
+        <div style="text-align:center"><div style="width:48px;height:48px;background:#1F7346"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">48</div></div>
+        <div style="text-align:center"><div style="width:64px;height:64px;background:#1F7346"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">64</div></div>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:24px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:20px">Radius by role</div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <div style="text-align:center"><div style="width:72px;height:56px;background:#E6F3EA;border:1px solid #CBD4CE;border-radius:6px"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">6 · sm</div><div style="font-size:11px;color:#66716B">buttons, inputs</div></div>
+          <div style="text-align:center"><div style="width:72px;height:56px;background:#E6F3EA;border:1px solid #CBD4CE;border-radius:10px"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">10 · md</div><div style="font-size:11px;color:#66716B">cards, alerts</div></div>
+          <div style="text-align:center"><div style="width:72px;height:56px;background:#E6F3EA;border:1px solid #CBD4CE;border-radius:14px"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">14 · lg</div><div style="font-size:11px;color:#66716B">panels, modals</div></div>
+          <div style="text-align:center"><div style="width:72px;height:56px;background:#E6F3EA;border:1px solid #CBD4CE;border-radius:999px"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:8px">999 · pill</div><div style="font-size:11px;color:#66716B">status pills only</div></div>
+        </div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px;background:#F1F4F2">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:20px">Elevation · three levels, no fourth</div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap">
+          <div style="text-align:center"><div style="width:88px;height:64px;background:#FFFFFF;border-radius:10px;box-shadow:0 1px 2px rgba(30,35,32,.05)"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:12px">--e-1</div><div style="font-size:11px;color:#66716B">resting card</div></div>
+          <div style="text-align:center"><div style="width:88px;height:64px;background:#FFFFFF;border-radius:10px;box-shadow:0 1px 2px rgba(30,35,32,.04),0 8px 24px rgba(30,35,32,.06)"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:12px">--e-2</div><div style="font-size:11px;color:#66716B">dropdown</div></div>
+          <div style="text-align:center"><div style="width:88px;height:64px;background:#FFFFFF;border-radius:14px;box-shadow:0 2px 4px rgba(30,35,32,.06),0 18px 44px rgba(30,35,32,.10)"></div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B;margin-top:12px">--e-3</div><div style="font-size:11px;color:#66716B">modal</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+      <div style="display:flex;gap:16px;padding:12px 24px;background:#F1F4F2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">
+        <div style="flex:0 0 96px">Breakpoint</div><div style="flex:0 0 110px">Width</div><div style="flex:1">Layout</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:12px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.5"><div style="flex:0 0 96px;font-weight:600">Mobile</div><div style="flex:0 0 110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">&lt; 640</div><div style="flex:1;color:#4F5A54">One column, nav in a drawer, tables scroll in their own container</div></div>
+      <div style="display:flex;gap:16px;padding:12px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.5"><div style="flex:0 0 96px;font-weight:600">Tablet</div><div style="flex:0 0 110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">640–1023</div><div style="flex:1;color:#4F5A54">Two columns, nav collapses to icons</div></div>
+      <div style="display:flex;gap:16px;padding:12px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.5"><div style="flex:0 0 96px;font-weight:600">Desktop</div><div style="flex:0 0 110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">1024–1439</div><div style="flex:1;color:#4F5A54">Sidebar plus content, 12-column grid</div></div>
+      <div style="display:flex;gap:16px;padding:12px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.5"><div style="flex:0 0 96px;font-weight:600">Wide</div><div style="flex:0 0 110px;font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">≥ 1440</div><div style="flex:1;color:#4F5A54">Content caps at 1280, sidebar stays fixed</div></div>
+    </div>
+  </section>
+
+  <section id="components" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">06</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Components</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">shadcn/ui is the base, re-skinned through the tokens. Do not hand-roll primitives. Every specimen below is at its shipping size: 44px minimum hit area, tokens only, no literal hex inside a component.</p>
+
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 8px">Buttons</h3>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 24px">One primary per view — the single thing you want done. Primary is Green Ink, not the brand green. The label says exactly what happens: "Publish", then a toast reading "Published".</p>
+    <div style="border:1px solid #E1E7E2;border-radius:14px;padding:32px;margin-bottom:24px">
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:24px">
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:none;border-radius:6px;background:#1F7346;color:#FFFFFF;cursor:pointer">Publish</button>
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:1px solid #CBD4CE;border-radius:6px;background:#FFFFFF;color:#1E2320;cursor:pointer">Save draft</button>
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 16px;min-height:44px;border:none;border-radius:6px;background:transparent;color:#1F7346;cursor:pointer">Add document</button>
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:none;border-radius:6px;background:#B32228;color:#FFFFFF;cursor:pointer">Delete company</button>
+        <button disabled="disabled" style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:1px solid #E1E7E2;border-radius:6px;background:#F1F4F2;color:#66716B">Publish</button>
+        <button aria-label="More actions" style="font-family:inherit;font-size:15.5px;width:44px;height:44px;border:1px solid #CBD4CE;border-radius:6px;background:#FFFFFF;color:#1E2320;cursor:pointer">···</button>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:16px;font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.6;color:#66716B;border-top:1px solid #E1E7E2;padding-top:20px">
+        <div>Primary<br>--green-ink</div>
+        <div>Secondary<br>--ground + --rule-strong</div>
+        <div>Tertiary<br>--green-ink, no fill</div>
+        <div>Destructive<br>--critical + confirm</div>
+        <div>Disabled<br>--surface / --ink-3</div>
+        <div>Icon-only<br>44px + aria-label</div>
+      </div>
+    </div>
+    <div style="background:#131519;border-radius:14px;padding:32px;margin-bottom:48px">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#8B968F;margin-bottom:20px">Same components, dark tokens</div>
+      <div style="display:flex;gap:12px;flex-wrap:wrap;align-items:center;margin-bottom:20px">
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:none;border-radius:6px;background:#7FD094;color:#12200F;cursor:pointer">Publish</button>
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:1px solid #3A4043;border-radius:6px;background:#131519;color:#E9EFE9;cursor:pointer">Save draft</button>
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 16px;min-height:44px;border:none;border-radius:6px;background:transparent;color:#7FD094;cursor:pointer">Add document</button>
+      </div>
+      <p style="font-size:13.5px;line-height:1.5;color:#AAB5AE;margin:0;max-width:68ch">White text on #7FD094 measures 1.85:1. In dark theme --on-green-ink flips to near-black, 9.16:1. Fix pairings at token level, never inside a component.</p>
+    </div>
+
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 8px">Form fields</h3>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 24px">Label above, helper below, error replacing the helper. An error names the fix, not the failure.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:48px">
+      <div style="border:1px solid #E1E7E2;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:24px">
+        <div>
+          <label for="g-co" style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">Company</label>
+          <input id="g-co" type="text" value="Riyadh Logistics Co." style="font-family:inherit;font-size:15.5px;width:100%;box-sizing:border-box;min-height:44px;padding:10px 12px;border:1px solid #CBD4CE;border-radius:6px;background:#FFFFFF;color:#1E2320">
+          <div style="font-size:13.5px;line-height:1.5;color:#66716B;margin-top:8px">Legal name as registered.</div>
+        </div>
+        <div>
+          <label for="g-file" style="display:block;font-size:13.5px;font-weight:600;margin-bottom:8px">Term sheet</label>
+          <input id="g-file" type="text" value="term-sheet-v4.pdf" style="font-family:inherit;font-size:15.5px;width:100%;box-sizing:border-box;min-height:44px;padding:10px 12px;border:1px solid #B32228;border-radius:6px;background:#FFFFFF;color:#1E2320">
+          <div style="font-size:13.5px;line-height:1.5;color:#B32228;margin-top:8px">✕ That file is 48 MB. The limit is 25 MB — compress it or split it in two.</div>
+        </div>
+        <div style="display:flex;gap:12px;align-items:flex-start">
+          <div style="width:20px;height:20px;flex:0 0 20px;margin-top:3px;border-radius:4px;background:#1F7346;color:#FFFFFF;display:flex;align-items:center;justify-content:center;font-size:12px">✓</div>
+          <div>
+            <div style="font-size:15.5px;font-weight:500">Notify the board</div>
+            <div style="font-size:13.5px;line-height:1.5;color:#66716B">Someone manages notifications, not webhook configuration.</div>
+          </div>
+        </div>
+      </div>
+      <div dir="rtl" style="border:1px solid #E1E7E2;border-radius:14px;padding:24px;display:flex;flex-direction:column;gap:24px">
+        <div style="font-size:12px;font-weight:600;color:#1F7346">النسخة العربية — نفس المكوّن، اتجاه معاكس</div>
+        <div>
+          <label for="g-co-ar" style="display:block;font-size:14.5px;font-weight:600;margin-bottom:8px">الشركة</label>
+          <input id="g-co-ar" type="text" value="شركة الرياض للخدمات اللوجستية" style="font-family:inherit;font-size:16.5px;width:100%;box-sizing:border-box;min-height:44px;padding:10px 12px;border:1px solid #CBD4CE;border-radius:6px;background:#FFFFFF;color:#1E2320;text-align:start">
+          <div style="font-size:14.5px;line-height:1.75;color:#66716B;margin-top:8px">الاسم النظامي كما هو مسجّل.</div>
+        </div>
+        <div>
+          <label for="g-amt-ar" style="display:block;font-size:14.5px;font-weight:600;margin-bottom:8px">قيمة الجولة</label>
+          <input id="g-amt-ar" type="text" value="12,480,000" style="font-family:'IBM Plex Mono',monospace;font-size:15px;width:100%;box-sizing:border-box;min-height:44px;padding:10px 12px;border:1px solid #CBD4CE;border-radius:6px;background:#FFFFFF;color:#1E2320;text-align:start;font-variant-numeric:tabular-nums">
+          <div style="font-size:14.5px;line-height:1.75;color:#66716B;margin-top:8px">الأرقام الغربية في اللغتين.</div>
+        </div>
+        <div style="display:flex;gap:12px">
+          <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:none;border-radius:6px;background:#1F7346;color:#FFFFFF;cursor:pointer">نشر</button>
+          <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:1px solid #CBD4CE;border-radius:6px;background:#FFFFFF;color:#1E2320;cursor:pointer">حفظ مسودة</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:96px">
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 8px">Status pills, cards and alerts</h3>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 24px">Status is never carried by colour alone. Every pill has an icon and a word, so it survives greyscale printing and colour-blindness alike.</p>
+    <div style="border:1px solid #E1E7E2;border-radius:14px;padding:24px;display:flex;gap:12px;flex-wrap:wrap;margin-bottom:24px">
+      <span style="display:inline-flex;align-items:center;gap:6px;background:#E4F3E9;color:#0A7E3A;font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:999px">✓ Complete</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:#F8EFDC;color:#935B00;font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:999px">! In review</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:#FAEBE0;color:#AF4803;font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:999px">▲ At risk</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:#FAE7E7;color:#B32228;font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:999px">✕ Blocked</span>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:#F1F4F2;color:#4F5A54;font-size:13.5px;font-weight:600;padding:7px 14px;border-radius:999px">— Not started</span>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;background:#FFFFFF;box-shadow:0 1px 2px rgba(30,35,32,.05);padding:24px">
+        <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;margin-bottom:16px">
+          <div>
+            <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:6px">Portfolio company</div>
+            <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em">Riyadh Logistics Co.</div>
+          </div>
+          <span style="display:inline-flex;align-items:center;gap:6px;background:#E4F3E9;color:#0A7E3A;font-size:13.5px;font-weight:600;padding:6px 12px;border-radius:999px">✓ Complete</span>
+        </div>
+        <div style="display:flex;gap:32px;flex-wrap:wrap;padding-top:16px;border-top:1px solid #E1E7E2">
+          <div><div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:4px">Holding</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-variant-numeric:tabular-nums">34.0%</div></div>
+          <div><div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:4px">Invested</div><div style="font-family:'IBM Plex Mono',monospace;font-size:15px;font-variant-numeric:tabular-nums">SAR 12,480,000</div></div>
+        </div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px;display:flex;flex-direction:column;gap:16px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">Card anatomy</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Radius 10, border --rule, elevation --e-1. Never border plus heavy shadow plus fill together.</li>
+          <li>Label 11px, title STC Bold 18, metrics in mono with tabular figures.</li>
+          <li>A card is a real object with its own identity. A row in a list is not a card.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:48px">
+      <div style="display:flex;gap:12px;background:#E4F3E9;border-radius:10px;padding:16px 20px">
+        <div style="color:#0A7E3A;font-size:15.5px;line-height:1.5">✓</div>
+        <div><div style="font-size:15.5px;font-weight:600;color:#0A7E3A;margin-bottom:4px">Data room published</div><div style="font-size:13.5px;line-height:1.5;color:#4F5A54">Nine sections are now visible to invited investors.</div></div>
+      </div>
+      <div style="display:flex;gap:12px;background:#F8EFDC;border-radius:10px;padding:16px 20px">
+        <div style="color:#935B00;font-size:15.5px;line-height:1.5">!</div>
+        <div><div style="font-size:15.5px;font-weight:600;color:#935B00;margin-bottom:4px">Four documents still in review</div><div style="font-size:13.5px;line-height:1.5;color:#4F5A54">They stay hidden until legal signs off.</div></div>
+      </div>
+      <div style="display:flex;gap:12px;background:#FAE7E7;border-radius:10px;padding:16px 20px">
+        <div style="color:#B32228;font-size:15.5px;line-height:1.5">✕</div>
+        <div><div style="font-size:15.5px;font-weight:600;color:#B32228;margin-bottom:4px">Upload failed</div><div style="font-size:13.5px;line-height:1.5;color:#4F5A54">The connection dropped at 60%. Retry and it resumes where it stopped.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:96px">
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 8px">Tables</h3>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 24px">Numbers right-aligned and tabular, text start-aligned, header in label style, rows separated by a rule and never by zebra stripes. Density is comfortable by default; compact is a user setting, not a design decision.</p>
+    <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden;margin-bottom:24px">
+      <div style="display:flex;gap:16px;padding:12px 20px;background:#F1F4F2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">
+        <div style="flex:2;min-width:0">Company</div><div style="flex:1;min-width:0">Stage</div><div style="flex:1;min-width:0">Status</div><div style="flex:1;min-width:0;text-align:end">Invested</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:14px 20px;border-top:1px solid #E1E7E2;font-size:15.5px;align-items:center">
+        <div style="flex:2;min-width:0;font-weight:500">Riyadh Logistics Co.</div><div style="flex:1;min-width:0;color:#4F5A54">Series A</div>
+        <div style="flex:1;min-width:0"><span style="display:inline-flex;align-items:center;gap:6px;background:#E4F3E9;color:#0A7E3A;font-size:13.5px;font-weight:600;padding:4px 10px;border-radius:999px">✓ Complete</span></div>
+        <div style="flex:1;min-width:0;text-align:end;font-family:'IBM Plex Mono',monospace;font-size:14px;font-variant-numeric:tabular-nums">12,480,000</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:14px 20px;border-top:1px solid #E1E7E2;font-size:15.5px;align-items:center">
+        <div style="flex:2;min-width:0;font-weight:500">Najd Agritech</div><div style="flex:1;min-width:0;color:#4F5A54">Seed</div>
+        <div style="flex:1;min-width:0"><span style="display:inline-flex;align-items:center;gap:6px;background:#F8EFDC;color:#935B00;font-size:13.5px;font-weight:600;padding:4px 10px;border-radius:999px">! In review</span></div>
+        <div style="flex:1;min-width:0;text-align:end;font-family:'IBM Plex Mono',monospace;font-size:14px;font-variant-numeric:tabular-nums">940,250</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:14px 20px;border-top:1px solid #E1E7E2;font-size:15.5px;align-items:center">
+        <div style="flex:2;min-width:0;font-weight:500">Hail Cold Chain</div><div style="flex:1;min-width:0;color:#4F5A54">Series B</div>
+        <div style="flex:1;min-width:0"><span style="display:inline-flex;align-items:center;gap:6px;background:#FAEBE0;color:#AF4803;font-size:13.5px;font-weight:600;padding:4px 10px;border-radius:999px">▲ At risk</span></div>
+        <div style="flex:1;min-width:0;text-align:end;font-family:'IBM Plex Mono',monospace;font-size:14px;font-variant-numeric:tabular-nums">28,100,000</div>
+      </div>
+      <div style="display:flex;gap:16px;padding:14px 20px;border-top:1px solid #CBD4CE;font-size:15.5px;align-items:center;background:#F1F4F2">
+        <div style="flex:2;min-width:0;font-weight:600">Total · 3 companies</div><div style="flex:1;min-width:0"></div><div style="flex:1;min-width:0"></div>
+        <div style="flex:1;min-width:0;text-align:end;font-family:'IBM Plex Mono',monospace;font-size:14px;font-weight:500;font-variant-numeric:tabular-nums">41,520,250</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:48px 0 8px">Empty, loading, error</h3>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 24px">Design all three before shipping the happy path. An empty state names the thing, says why it is empty, and offers the one action that fills it.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:48px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:32px 24px;text-align:center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="margin-bottom:16px" aria-hidden="true">
+          <rect x="12" y="8" width="32" height="44" rx="3" stroke="#CBD4CE" stroke-width="2.5"></rect>
+          <path d="M20 22h16M20 30h16M20 38h10" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="46" cy="44" r="11" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+          <path d="M46 39v10M41 44h10" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">No documents yet</div>
+        <p style="font-size:13.5px;line-height:1.5;color:#4F5A54;margin:0 0 20px">This section holds board resolutions. Add the first one and it becomes visible to invited investors.</p>
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:none;border-radius:6px;background:#1F7346;color:#FFFFFF;cursor:pointer">Add document</button>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:20px">Loading · skeleton, not a spinner</div>
+        <div style="display:flex;flex-direction:column;gap:12px">
+          <div style="height:14px;width:60%;border-radius:4px;background:#E8EDEA"></div>
+          <div style="height:14px;width:100%;border-radius:4px;background:#E8EDEA"></div>
+          <div style="height:14px;width:85%;border-radius:4px;background:#E8EDEA"></div>
+          <div style="height:44px;width:100%;border-radius:6px;background:#F1F4F2;margin-top:8px"></div>
+        </div>
+        <p style="font-size:13.5px;line-height:1.5;color:#4F5A54;margin:20px 0 0">Skeletons mirror the shape of the content that is coming, so nothing jumps when it lands.</p>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:32px 24px;text-align:center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" style="margin-bottom:16px" aria-hidden="true">
+          <circle cx="32" cy="32" r="22" fill="#FAE7E7" stroke="#B32228" stroke-width="2.5"></circle>
+          <path d="M32 21v15M32 42.5v.5" stroke="#B32228" stroke-width="3" stroke-linecap="round"></path>
+        </svg>
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:8px">We could not load the portfolio</div>
+        <p style="font-size:13.5px;line-height:1.5;color:#4F5A54;margin:0 0 20px">The request timed out. Nothing was lost — try again, or contact us if it keeps happening.</p>
+        <button style="font-family:inherit;font-size:15.5px;font-weight:600;padding:12px 20px;min-height:44px;border:1px solid #CBD4CE;border-radius:6px;background:#FFFFFF;color:#1E2320;cursor:pointer">Try again</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="illustration" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">07</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Illustration and icons</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">One drawing language, taken from the mark: even strokes, round caps, geometric construction, a single flat green accent on an otherwise neutral line drawing. No gradients, no soft shadows, no isometric scenes, no faces, no 3D.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-bottom:32px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:16px">Construction</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Drawn on a 24px grid, scaled in multiples.</li>
+          <li>Stroke 1.75px at icon size, 2.5px at spot size.</li>
+          <li>Round caps and round joins, matching the mark.</li>
+          <li>Rectangles take a 3–4px corner radius, never sharp.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:16px">Colour in drawings</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Line in --ink-2 or --rule-strong, never pure black.</li>
+          <li>One accent per drawing: --green-wash fill with a --green-ink line.</li>
+          <li>Brand green appears only as a small solid fill, never as a hairline.</li>
+          <li>Status colours in a drawing only when the drawing is about status.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #FAE7E7;background:#FAE7E7;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#B32228;margin-bottom:16px">Never</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Stock vector people, blobs, glassmorphism, 3D renders.</li>
+          <li>Gradient fills of any kind.</li>
+          <li>Decoration in an empty state that carries no meaning.</li>
+          <li>An illustration doing work a single number should do.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:96px">
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 8px">Spot illustrations · 64px</h3>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 24px">Each carries one idea and no more than five shapes. Use them in empty states, onboarding steps and section headers.</p>
+    <div style="border:1px solid #E1E7E2;border-radius:14px;padding:32px;display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:32px;margin-bottom:48px">
+      <div style="text-align:center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <rect x="10" y="12" width="30" height="40" rx="3" stroke="#4F5A54" stroke-width="2.5"></rect>
+          <path d="M18 24h14M18 32h14M18 40h9" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="45" cy="42" r="11" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+          <path d="M45 37v10M40 42h10" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        <div style="font-size:13.5px;font-weight:600;margin-top:12px">Add a document</div>
+      </div>
+      <div style="text-align:center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <rect x="8" y="14" width="48" height="36" rx="3" stroke="#4F5A54" stroke-width="2.5"></rect>
+          <path d="M8 24h48" stroke="#4F5A54" stroke-width="2.5"></path>
+          <path d="M26 24v26M41 24v26" stroke="#CBD4CE" stroke-width="2.5"></path>
+          <rect x="8" y="14" width="18" height="10" fill="#64C379"></rect>
+        </svg>
+        <div style="font-size:13.5px;font-weight:600;margin-top:12px">Cap table</div>
+      </div>
+      <div style="text-align:center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M12 48V32M26 48V20M40 48V38M54 48V26" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+          <path d="M8 54h48" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="26" cy="20" r="5" fill="#64C379"></circle>
+        </svg>
+        <div style="font-size:13.5px;font-weight:600;margin-top:12px">Performance</div>
+      </div>
+      <div style="text-align:center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 8l20 8v16c0 12-8 20-20 24C20 52 12 44 12 32V16l20-8z" stroke="#4F5A54" stroke-width="2.5" stroke-linejoin="round"></path>
+          <path d="M24 32l6 6 12-13" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <div style="font-size:13.5px;font-weight:600;margin-top:12px">Governance</div>
+      </div>
+      <div style="text-align:center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <circle cx="22" cy="22" r="9" stroke="#4F5A54" stroke-width="2.5"></circle>
+          <circle cx="42" cy="22" r="9" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+          <path d="M10 52c0-8 5.5-13 12-13s12 5 12 13M30 52c0-8 5.5-13 12-13s12 5 12 13" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        <div style="font-size:13.5px;font-weight:600;margin-top:12px">Investors</div>
+      </div>
+      <div style="text-align:center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <rect x="12" y="26" width="40" height="28" rx="3" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></rect>
+          <path d="M22 26v-8a10 10 0 0120 0v8" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="32" cy="40" r="3.5" fill="#1F7346"></circle>
+        </svg>
+        <div style="font-size:13.5px;font-weight:600;margin-top:12px">Secure room</div>
+      </div>
+    </div>
+
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 8px">Icons · 20–24px</h3>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 24px">Lucide, unmodified, at 1.75px stroke. Do not mix icon sets and do not redraw them. An icon never appears alone as a control unless it carries an aria-label and a tooltip.</p>
+    <div style="border:1px solid #E1E7E2;border-radius:14px;padding:32px;display:flex;gap:32px;flex-wrap:wrap;margin-bottom:48px">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><path d="M9 22V12h6v10"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-3-3-4 4"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="4"></circle><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"></path><path d="M17 11h5M19.5 8.5v5"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"></path><path d="M12 8v4l3 2"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><path d="M7 10l5 5 5-5M12 15V3"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+    </div>
+
+    <h3 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin:0 0 8px">Photography</h3>
+    <p style="font-size:13.5px;line-height:1.5;color:#66716B;max-width:68ch;margin:0 0 24px">Real operations, real places, real people at work — logistics yards, plant floors, meeting rooms. Never stock handshakes, never skyline clichés, never a photograph of nothing. Frames below are placeholders, to be replaced with commissioned or licensed photography.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-bottom:24px">
+      <div style="border:1px dashed #CBD4CE;border-radius:10px;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#F1F4F2;padding:16px;text-align:center">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">3:2 · hero</div>
+        <div style="font-size:13.5px;line-height:1.5;color:#4F5A54">Operations in progress, wide, natural light</div>
+      </div>
+      <div style="border:1px dashed #CBD4CE;border-radius:10px;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#F1F4F2;padding:16px;text-align:center">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">3:2 · portrait</div>
+        <div style="font-size:13.5px;line-height:1.5;color:#4F5A54">Person at their actual work, eye level, no posing</div>
+      </div>
+      <div style="border:1px dashed #CBD4CE;border-radius:10px;aspect-ratio:3/2;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:8px;background:#F1F4F2;padding:16px;text-align:center">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">3:2 · detail</div>
+        <div style="font-size:13.5px;line-height:1.5;color:#4F5A54">Close crop on material, machinery, product</div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Treatment</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Natural colour. No duotone, no green wash over the image.</li>
+          <li>Crop to 3:2 or 16:9. Radius 10 to match cards.</li>
+          <li>Text over photography needs a solid scrim, not opacity on the type.</li>
+        </ul>
+      </div>
+      <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Which to use when</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Photography for people, places and proof.</li>
+          <li>Illustration for structures, flows and states.</li>
+          <li>Charts for anything quantitative. Never illustrate a number.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:96px">
+    <div style="border:1px solid #E1E7E2;border-radius:14px;padding:32px;margin-bottom:24px">
+      <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:24px">Spot set · 64px · use in empty states and section headers</div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:24px">
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="10" y="10" width="44" height="44" rx="4" fill="#E6F3EA" stroke="#4F5A54" stroke-width="2.5"></rect>
+            <path d="M10 24h44M24 24v30" stroke="#4F5A54" stroke-width="2.5"></path>
+            <path d="M33 34h13M33 42h9" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <div style="font-size:13.5px;font-weight:600;margin-top:12px">Data room</div>
+        </div>
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M14 50V30M27 50V18M40 50V38M53 50V24" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+            <path d="M8 56h48" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+            <circle cx="27" cy="18" r="4.5" fill="#64C379"></circle>
+          </svg>
+          <div style="font-size:13.5px;font-weight:600;margin-top:12px">Performance</div>
+        </div>
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="21" fill="#E6F3EA" stroke="#4F5A54" stroke-width="2.5"></circle>
+            <path d="M32 11a21 21 0 0 1 18.2 31.5L32 32z" fill="#64C379"></path>
+            <circle cx="32" cy="32" r="7" fill="#FFFFFF" stroke="#4F5A54" stroke-width="2.5"></circle>
+          </svg>
+          <div style="font-size:13.5px;font-weight:600;margin-top:12px">Cap table</div>
+        </div>
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="12" y="8" width="32" height="44" rx="4" stroke="#4F5A54" stroke-width="2.5"></rect>
+            <path d="M20 22h16M20 30h16M20 38h9" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+            <circle cx="45" cy="44" r="11" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+            <path d="M40.5 44.5l3 3 6-6.5" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <div style="font-size:13.5px;font-weight:600;margin-top:12px">Approved</div>
+        </div>
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="9" stroke="#4F5A54" stroke-width="2.5"></circle>
+            <circle cx="44" cy="40" r="9" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+            <path d="M10 52c0-7 5.4-12 12-12M32 52c0-7 5.4-12 12-12" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <div style="font-size:13.5px;font-weight:600;margin-top:12px">Investors</div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Construction</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>24px grid, 2.5px stroke, round cap and join.</li>
+          <li>Line in --ink-2, accent in --green-ink, fill in --green-wash or --green.</li>
+          <li>Radius 4 on rectangles. Flat and front-on.</li>
+          <li>Five shapes maximum per drawing.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Three scales</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Icon 20–24px, 1.75px stroke, one colour, no fill.</li>
+          <li>Spot 64px, 2.5px stroke, one wash accent.</li>
+          <li>Scene 160–240px, same weights, never more detail.</li>
+        </ul>
+      </div>
+      <div style="background:#FAE7E7;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Never</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Stock vector people, blobs, 3D renders, glassmorphism.</li>
+          <li>Gradient fills, or the brand green as a hairline.</li>
+          <li>Decoration that carries no meaning.</li>
+          <li>An illustration doing the work a number should do.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #CBD4CE;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Photography</div>
+        <p style="font-size:13.5px;line-height:1.6;color:#4F5A54;margin:0 0 12px">Drawings explain structure. Where the subject is a real place, person or building, use a photograph instead: available light, real settings, no stock handshakes or glass towers at sunset.</p>
+        <div style="height:88px;border:1px dashed #CBD4CE;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:12px;color:#66716B;font-family:'IBM Plex Mono',monospace;background:#F1F4F2">photo slot · 16:9</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="charts" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">08</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Charts and data</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">Series colours run in a fixed order, so a category keeps its colour across every chart in a document. Axis labels in --ink-3, gridlines in --rule, and the value always legible as a number, not only as a shape.</p>
+    <div style="border:1px solid #E1E7E2;border-radius:14px;padding:32px;display:flex;gap:24px;flex-wrap:wrap">
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:4px;background:#1F7346"></div><div><div style="font-size:13.5px;font-weight:700">Series 1</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">#1F7346</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:4px;background:#64C379"></div><div><div style="font-size:13.5px;font-weight:700">Series 2</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">#64C379</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:4px;background:#2A2A33"></div><div><div style="font-size:13.5px;font-weight:700">Series 3</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">#2A2A33</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:4px;background:#A9B7AE"></div><div><div style="font-size:13.5px;font-weight:700">Series 4</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">#A9B7AE</div></div></div>
+      <div style="display:flex;align-items:center;gap:10px"><div style="width:28px;height:28px;border-radius:4px;background:#C3E8CE"></div><div><div style="font-size:13.5px;font-weight:700">Series 5</div><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;color:#66716B">#C3E8CE</div></div></div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:96px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:16px;margin-bottom:24px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:4px">Capital deployed</div>
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin-bottom:24px">SAR 41.5M · 3 companies</div>
+        <div style="display:flex;align-items:flex-end;gap:16px;height:150px;border-bottom:1px solid #E1E7E2">
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:8px"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:center;color:#4F5A54;font-variant-numeric:tabular-nums">12.5</div><div style="background:#1F7346;border-radius:3px 3px 0 0;height:44%"></div></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:8px"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:center;color:#4F5A54;font-variant-numeric:tabular-nums">0.9</div><div style="background:#1F7346;border-radius:3px 3px 0 0;height:5%"></div></div>
+          <div style="flex:1;display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:8px"><div style="font-family:'IBM Plex Mono',monospace;font-size:12px;text-align:center;color:#4F5A54;font-variant-numeric:tabular-nums">28.1</div><div style="background:#1F7346;border-radius:3px 3px 0 0;height:100%"></div></div>
+        </div>
+        <div style="display:flex;gap:16px;margin-top:10px">
+          <div style="flex:1;font-size:13.5px;color:#66716B;text-align:center">Riyadh</div>
+          <div style="flex:1;font-size:13.5px;color:#66716B;text-align:center">Najd</div>
+          <div style="flex:1;font-size:13.5px;color:#66716B;text-align:center">Hail</div>
+        </div>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:4px">Data room readiness</div>
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:24px;line-height:1.15;letter-spacing:-0.022em;margin-bottom:24px">31 of 40 documents</div>
+        <div style="display:flex;height:14px;border-radius:999px;overflow:hidden;margin-bottom:20px">
+          <div style="width:62%;background:#1F7346"></div>
+          <div style="width:15%;background:#64C379"></div>
+          <div style="width:10%;background:#A9B7AE"></div>
+          <div style="width:13%;background:#E8EDEA"></div>
+        </div>
+        <div style="display:flex;flex-direction:column;gap:10px">
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px"><div style="width:12px;height:12px;border-radius:3px;background:#1F7346;flex:0 0 12px"></div><div style="flex:1">Approved</div><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-variant-numeric:tabular-nums">25</div></div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px"><div style="width:12px;height:12px;border-radius:3px;background:#64C379;flex:0 0 12px"></div><div style="flex:1">In review</div><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-variant-numeric:tabular-nums">6</div></div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px"><div style="width:12px;height:12px;border-radius:3px;background:#A9B7AE;flex:0 0 12px"></div><div style="flex:1">Requested</div><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-variant-numeric:tabular-nums">4</div></div>
+          <div style="display:flex;align-items:center;gap:10px;font-size:13.5px"><div style="width:12px;height:12px;border-radius:3px;background:#E8EDEA;flex:0 0 12px"></div><div style="flex:1">Not started</div><div style="font-family:'IBM Plex Mono',monospace;font-size:13px;font-variant-numeric:tabular-nums">5</div></div>
+        </div>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px">
+      <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Rules</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Bars start at zero. Always.</li>
+          <li>Label the bar directly rather than forcing a trip to the legend.</li>
+          <li>Five series is the ceiling. Beyond that, group into "Other".</li>
+          <li>Mono with tabular figures on every axis and value.</li>
+        </ul>
+      </div>
+      <div style="background:#FAE7E7;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Never</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Donut charts with more than three slices.</li>
+          <li>Dual axes, 3D bars, drop shadows on data.</li>
+          <li>Status colour on a series that is not a status.</li>
+          <li>Colour as the only difference between two series in print.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="app" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">09</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">App design</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">Three reference screens assembled entirely from the components above: nothing here is bespoke. Desktop is sidebar plus content on a 12-column grid; mobile drops to one column with the nav in a drawer.</p>
+
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:12px">Desktop · portfolio overview</div>
+    <div style="border:1px solid #CBD4CE;border-radius:14px;overflow:hidden;box-shadow:0 2px 4px rgba(30,35,32,.06),0 18px 44px rgba(30,35,32,.10);margin-bottom:48px">
+      <div style="display:flex;align-items:center;gap:8px;padding:12px 16px;background:#F1F4F2;border-bottom:1px solid #E1E7E2">
+        <div style="width:11px;height:11px;border-radius:999px;background:#CBD4CE"></div>
+        <div style="width:11px;height:11px;border-radius:999px;background:#CBD4CE"></div>
+        <div style="width:11px;height:11px;border-radius:999px;background:#CBD4CE"></div>
+      </div>
+      <div style="display:flex;min-height:520px;background:#FFFFFF">
+        <div style="flex:0 0 216px;border-inline-end:1px solid #E1E7E2;background:#F1F4F2;padding:20px 12px;display:flex;flex-direction:column;gap:4px">
+          <div style="display:flex;align-items:center;gap:10px;padding:0 12px 20px">
+            <div style="width:26px;height:26px;border-radius:6px;background:#1F7346;display:flex;align-items:center;justify-content:center;color:#FFFFFF;font-weight:700;font-size:14px">A</div>
+            <div style="font-weight:700;font-size:15.5px;letter-spacing:-0.01em">Altorabi</div>
+          </div>
+          <div style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;border-radius:6px;background:#E6F3EA;color:#1F7346;font-size:14.5px;font-weight:700">Portfolio</div>
+          <div style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;border-radius:6px;color:#4F5A54;font-size:14.5px">Data room</div>
+          <div style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;border-radius:6px;color:#4F5A54;font-size:14.5px">Investors</div>
+          <div style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;border-radius:6px;color:#4F5A54;font-size:14.5px">Reports</div>
+          <div style="display:flex;align-items:center;gap:10px;min-height:40px;padding:0 12px;border-radius:6px;color:#4F5A54;font-size:14.5px">Settings</div>
+        </div>
+        <div style="flex:1;min-width:0;padding:32px">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap;margin-bottom:32px">
+            <div>
+              <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:6px">Fund I</div>
+              <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em">Portfolio</div>
+            </div>
+            <div style="display:flex;gap:12px">
+              <button style="font-family:inherit;font-size:15.5px;font-weight:700;padding:12px 18px;min-height:44px;border:1px solid #CBD4CE;border-radius:6px;background:#FFFFFF;color:#1E2320;cursor:pointer">Export</button>
+              <button style="font-family:inherit;font-size:15.5px;font-weight:700;padding:12px 18px;min-height:44px;border:none;border-radius:6px;background:#1F7346;color:#FFFFFF;cursor:pointer">Add company</button>
+            </div>
+          </div>
+          <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:16px;margin-bottom:32px">
+            <div style="border:1px solid #E1E7E2;border-radius:10px;padding:20px"><div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:8px">Deployed</div><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-variant-numeric:tabular-nums">41.5M</div></div>
+            <div style="border:1px solid #E1E7E2;border-radius:10px;padding:20px"><div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:8px">Companies</div><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-variant-numeric:tabular-nums">3</div></div>
+            <div style="border:1px solid #E1E7E2;border-radius:10px;padding:20px"><div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:8px">Docs ready</div><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;font-variant-numeric:tabular-nums">31/40</div></div>
+            <div style="border:1px solid #E1E7E2;border-radius:10px;padding:20px"><div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:8px">At risk</div><div style="font-family:'IBM Plex Mono',monospace;font-size:22px;color:#AF4803;font-variant-numeric:tabular-nums">1</div></div>
+          </div>
+          <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+            <div style="display:flex;gap:16px;padding:12px 20px;background:#F1F4F2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">
+              <div style="flex:2;min-width:0">Company</div><div style="flex:1;min-width:0">Stage</div><div style="flex:1;min-width:0">Status</div><div style="flex:1;min-width:0;text-align:end">Invested</div>
+            </div>
+            <div style="display:flex;gap:16px;padding:14px 20px;border-top:1px solid #E1E7E2;font-size:15.5px;align-items:center">
+              <div style="flex:2;min-width:0">Riyadh Logistics Co.</div><div style="flex:1;min-width:0;color:#4F5A54">Series A</div>
+              <div style="flex:1;min-width:0"><span style="display:inline-flex;align-items:center;gap:6px;background:#E4F3E9;color:#0A7E3A;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px">✓ Complete</span></div>
+              <div style="flex:1;min-width:0;text-align:end;font-family:'IBM Plex Mono',monospace;font-size:14px;font-variant-numeric:tabular-nums">12,480,000</div>
+            </div>
+            <div style="display:flex;gap:16px;padding:14px 20px;border-top:1px solid #E1E7E2;font-size:15.5px;align-items:center">
+              <div style="flex:2;min-width:0">Najd Agritech</div><div style="flex:1;min-width:0;color:#4F5A54">Seed</div>
+              <div style="flex:1;min-width:0"><span style="display:inline-flex;align-items:center;gap:6px;background:#F8EFDC;color:#935B00;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px">! In review</span></div>
+              <div style="flex:1;min-width:0;text-align:end;font-family:'IBM Plex Mono',monospace;font-size:14px;font-variant-numeric:tabular-nums">940,250</div>
+            </div>
+            <div style="display:flex;gap:16px;padding:14px 20px;border-top:1px solid #E1E7E2;font-size:15.5px;align-items:center">
+              <div style="flex:2;min-width:0">Hail Cold Chain</div><div style="flex:1;min-width:0;color:#4F5A54">Series B</div>
+              <div style="flex:1;min-width:0"><span style="display:inline-flex;align-items:center;gap:6px;background:#FAEBE0;color:#AF4803;font-size:13px;font-weight:700;padding:4px 10px;border-radius:999px">▲ At risk</span></div>
+              <div style="flex:1;min-width:0;text-align:end;font-family:'IBM Plex Mono',monospace;font-size:14px;font-variant-numeric:tabular-nums">28,100,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section style="margin-bottom:96px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:32px">
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:12px">Mobile · company detail</div>
+        <div style="max-width:340px;border:1px solid #CBD4CE;border-radius:24px;overflow:hidden;background:#FFFFFF;box-shadow:0 18px 44px rgba(30,35,32,.10)">
+          <div style="display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid #E1E7E2">
+            <button aria-label="Back" style="font-family:inherit;width:44px;height:44px;border:none;border-radius:6px;background:transparent;font-size:18px;cursor:pointer">←</button>
+            <div style="font-weight:700;font-size:16px;flex:1;min-width:0">Riyadh Logistics</div>
+            <button aria-label="More actions" style="font-family:inherit;width:44px;height:44px;border:none;border-radius:6px;background:transparent;font-size:18px;cursor:pointer">···</button>
+          </div>
+          <div style="padding:20px 16px;display:flex;flex-direction:column;gap:16px">
+            <span style="align-self:flex-start;display:inline-flex;gap:6px;background:#E4F3E9;color:#0A7E3A;font-size:13.5px;font-weight:600;padding:6px 14px;border-radius:999px">✓ Complete</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="border:1px solid #E1E7E2;border-radius:10px;padding:16px"><div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:6px">Holding</div><div style="font-family:'IBM Plex Mono',monospace;font-size:18px;font-variant-numeric:tabular-nums">34.0%</div></div>
+              <div style="border:1px solid #E1E7E2;border-radius:10px;padding:16px"><div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:6px">Invested</div><div style="font-family:'IBM Plex Mono',monospace;font-size:18px;font-variant-numeric:tabular-nums">12.48M</div></div>
+            </div>
+            <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+              <div style="padding:12px 16px;background:#F1F4F2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B">Documents</div>
+              <div style="display:flex;justify-content:space-between;padding:14px 16px;border-top:1px solid #E1E7E2;font-size:15px"><span>Term sheet</span><span style="color:#0A7E3A;font-weight:600">✓</span></div>
+              <div style="display:flex;justify-content:space-between;padding:14px 16px;border-top:1px solid #E1E7E2;font-size:15px"><span>Board minutes</span><span style="color:#935B00;font-weight:600">!</span></div>
+            </div>
+            <button style="font-family:inherit;font-size:15.5px;font-weight:600;min-height:48px;border:none;border-radius:6px;background:#1F7346;color:#FFFFFF;cursor:pointer;width:100%">Add document</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B;margin-bottom:12px">Arabic · same screen, mirrored</div>
+        <div dir="rtl" style="max-width:340px;border:1px solid #CBD4CE;border-radius:24px;overflow:hidden;background:#FFFFFF;box-shadow:0 18px 44px rgba(30,35,32,.10)">
+          <div style="display:flex;align-items:center;gap:12px;padding:16px;border-bottom:1px solid #E1E7E2">
+            <button aria-label="رجوع" style="font-family:inherit;width:44px;height:44px;border:none;border-radius:6px;background:transparent;font-size:18px;cursor:pointer">→</button>
+            <div style="font-weight:700;font-size:17px;flex:1;min-width:0">الرياض للخدمات اللوجستية</div>
+            <button aria-label="إجراءات إضافية" style="font-family:inherit;width:44px;height:44px;border:none;border-radius:6px;background:transparent;font-size:18px;cursor:pointer">···</button>
+          </div>
+          <div style="padding:20px 16px;display:flex;flex-direction:column;gap:16px">
+            <span style="align-self:flex-start;display:inline-flex;gap:6px;background:#E4F3E9;color:#0A7E3A;font-size:14px;font-weight:600;padding:6px 14px;border-radius:999px">✓ مكتمل</span>
+            <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
+              <div style="border:1px solid #E1E7E2;border-radius:10px;padding:16px"><div style="font-size:12.5px;font-weight:600;color:#66716B;margin-bottom:6px">الحصة</div><div style="font-family:'IBM Plex Mono',monospace;font-size:18px;font-variant-numeric:tabular-nums">34.0%</div></div>
+              <div style="border:1px solid #E1E7E2;border-radius:10px;padding:16px"><div style="font-size:12.5px;font-weight:600;color:#66716B;margin-bottom:6px">قيمة الاستثمار</div><div style="font-family:'IBM Plex Mono',monospace;font-size:18px;font-variant-numeric:tabular-nums">12.48M</div></div>
+            </div>
+            <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+              <div style="padding:12px 16px;background:#F1F4F2;font-size:12.5px;font-weight:600;color:#66716B">المستندات</div>
+              <div style="display:flex;justify-content:space-between;padding:14px 16px;border-top:1px solid #E1E7E2;font-size:16px"><span>خطاب الشروط</span><span style="color:#0A7E3A;font-weight:600">✓</span></div>
+              <div style="display:flex;justify-content:space-between;padding:14px 16px;border-top:1px solid #E1E7E2;font-size:16px"><span>محاضر المجلس</span><span style="color:#935B00;font-weight:600">!</span></div>
+            </div>
+            <button style="font-family:inherit;font-size:16px;font-weight:600;min-height:48px;border:none;border-radius:6px;background:#1F7346;color:#FFFFFF;cursor:pointer;width:100%">إضافة مستند</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rtl" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">10</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Arabic and RTL</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">Arabic is a first-class language here, not a translation layer. Build both directions from the first commit — retrofitting RTL is a rewrite, every time.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;margin-bottom:24px">
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Logical properties only</div>
+        <div style="font-family:'IBM Plex Mono',monospace;font-size:12px;line-height:1.8;color:#4F5A54">margin-inline-start<br>padding-inline-end<br>border-inline-start<br>inset-inline-start<br>text-align: start</div>
+        <p style="font-size:13.5px;line-height:1.5;color:#66716B;margin:16px 0 0">Never <span style="font-family:'IBM Plex Mono',monospace;font-size:12px">margin-left</span>. One physical property and the Arabic layout breaks silently.</p>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Mirrors</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>Back, forward, next, previous arrows.</li>
+          <li>Progress and stepper direction.</li>
+          <li>Sidebar, drawer and breadcrumb order.</li>
+          <li>Chart reading direction, not the chart's own axis maths.</li>
+        </ul>
+      </div>
+      <div style="border:1px solid #E1E7E2;border-radius:10px;padding:24px">
+        <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Does not mirror</div>
+        <ul style="margin:0;padding-inline-start:20px;font-size:13.5px;line-height:1.65;color:#4F5A54">
+          <li>The logo and the mark.</li>
+          <li>Clocks, play and pause, media transport.</li>
+          <li>Numbers, currency figures, phone numbers, code.</li>
+          <li>Checkmarks, warning glyphs, brand imagery.</li>
+        </ul>
+      </div>
+    </div>
+    <div style="background:#F1F4F2;border-radius:10px;padding:24px">
+      <div style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:18px;line-height:1.25;letter-spacing:-0.015em;margin-bottom:12px">Copy is written, not translated</div>
+      <p style="font-size:13.5px;line-height:1.6;color:#4F5A54;margin:0;max-width:68ch">Arabic runs 20–30% longer than English. Buttons must flex, never fix their width. Write the Arabic natively in Modern Standard Arabic — formal enough for a board paper, plain enough to read once. Machine translation shows immediately and costs credibility.</p>
+    </div>
+  </section>
+
+  <section id="a11y" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">11</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Accessibility</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">WCAG 2.2 AA is the floor, not the goal. Every ratio in §02 is measured, not estimated.</p>
+    <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+      <div style="display:flex;gap:16px;padding:12px 24px;background:#F1F4F2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B"><div style="flex:0 0 150px">Requirement</div><div style="flex:1">Rule</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 150px;font-weight:600">Text contrast</div><div style="flex:1;color:#4F5A54">4.5:1 for body, 3:1 for text at 24px+ or 19px+ bold.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 150px;font-weight:600">Non-text contrast</div><div style="flex:1;color:#4F5A54">3:1 for input borders, focus rings, icons carrying meaning.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 150px;font-weight:600">Hit area</div><div style="flex:1;color:#4F5A54">44×44px minimum on every interactive target, including icon-only buttons.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 150px;font-weight:600">Focus visible</div><div style="flex:1;color:#4F5A54">2px ring, 2px offset, --green-ink on light and #7FD094 on dark. Never remove the outline.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 150px;font-weight:600">Never colour alone</div><div style="flex:1;color:#4F5A54">Status always carries an icon and a word alongside the colour.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 150px;font-weight:600">Reduced motion</div><div style="flex:1;color:#4F5A54">Honour prefers-reduced-motion. Transitions 150–250ms, ease-out, and never longer than 400ms.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 150px;font-weight:600">Opacity on text</div><div style="flex:1;color:#4F5A54">Forbidden. Step down to --ink-2 or --ink-3, which keep their measured ratios.</div></div>
+    </div>
+  </section>
+
+  <section id="voice" style="margin-bottom:96px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">12</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Voice in the interface</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 32px">Evidence, then the claim. Say what happened, what it means, and what to do next — in that order, in as few words as carry it.</p>
+    <div style="border:1px solid #E1E7E2;border-radius:10px;overflow:hidden">
+      <div style="display:flex;gap:16px;padding:12px 24px;background:#F1F4F2;font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#66716B"><div style="flex:0 0 110px">Where</div><div style="flex:1">Instead of</div><div style="flex:1">Write</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 110px;font-weight:600">Button</div><div style="flex:1;color:#B32228">Submit</div><div style="flex:1;color:#0A7E3A">Publish data room</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 110px;font-weight:600">Error</div><div style="flex:1;color:#B32228">Invalid input.</div><div style="flex:1;color:#0A7E3A">That file is 48 MB. The limit is 25 MB — compress it or split it in two.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 110px;font-weight:600">Empty state</div><div style="flex:1;color:#B32228">Nothing to see here!</div><div style="flex:1;color:#0A7E3A">No documents yet. This section holds board resolutions.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 110px;font-weight:600">Confirm</div><div style="flex:1;color:#B32228">Are you sure?</div><div style="flex:1;color:#0A7E3A">Delete Riyadh Logistics and its 14 documents? This cannot be undone.</div></div>
+      <div style="display:flex;gap:16px;padding:14px 24px;border-top:1px solid #E1E7E2;font-size:13.5px;line-height:1.55"><div style="flex:0 0 110px;font-weight:600">Setting</div><div style="flex:1;color:#B32228">Enable webhook notifications</div><div style="flex:1;color:#0A7E3A">Notify the board</div></div>
+    </div>
+  </section>
+
+  <section id="tokens" style="margin-bottom:64px">
+    <div style="font-size:11px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;color:#1F7346;margin-bottom:12px">13</div>
+    <h2 style="font-family:STC,Helvetica,sans-serif;font-weight:700;font-size:32px;line-height:1.1;letter-spacing:-0.028em;margin:0 0 16px">Tokens</h2>
+    <p style="font-size:15.5px;line-height:1.55;color:#4F5A54;max-width:68ch;margin:0 0 24px">The full token block lives in Brand Book §12. Copy it whole and verbatim. Components read tokens; they never carry a literal hex value. These are the names a model must use.</p>
+    <div style="background:#131519;border-radius:14px;padding:32px;overflow-x:auto">
+      <pre style="margin:0;font-family:'IBM Plex Mono',monospace;font-size:12.5px;line-height:1.85;color:#AAB5AE">:root {
+  <span style="color:#7FD094">--green</span>: #64C379;        <span style="color:#66716B">/* fill only, never text on light */</span>
+  <span style="color:#7FD094">--green-ink</span>: #1F7346;    <span style="color:#66716B">/* green text, primary button, focus */</span>
+  <span style="color:#7FD094">--green-wash</span>: #E6F3EA;
+  <span style="color:#7FD094">--char</span>: #2A2A33;
+  <span style="color:#7FD094">--night</span>: #1A1B21;
+
+  <span style="color:#7FD094">--ground</span>: #FFFFFF;
+  <span style="color:#7FD094">--surface</span>: #F1F4F2;
+  <span style="color:#7FD094">--rule</span>: #E1E7E2;
+  <span style="color:#7FD094">--rule-strong</span>: #CBD4CE;
+
+  <span style="color:#7FD094">--ink</span>: #1E2320;
+  <span style="color:#7FD094">--ink-2</span>: #4F5A54;
+  <span style="color:#7FD094">--ink-3</span>: #66716B;
+
+  <span style="color:#7FD094">--success</span>: #0A7E3A;   <span style="color:#7FD094">--success-bg</span>: #E4F3E9;
+  <span style="color:#7FD094">--warning</span>: #935B00;   <span style="color:#7FD094">--warning-bg</span>: #F8EFDC;
+  <span style="color:#7FD094">--serious</span>: #AF4803;   <span style="color:#7FD094">--serious-bg</span>: #FAEBE0;
+  <span style="color:#7FD094">--critical</span>: #B32228;  <span style="color:#7FD094">--critical-bg</span>: #FAE7E7;
+
+  <span style="color:#7FD094">--r-sm</span>: 6px;  <span style="color:#7FD094">--r-md</span>: 10px;  <span style="color:#7FD094">--r-lg</span>: 14px;  <span style="color:#7FD094">--r-pill</span>: 999px;
+  <span style="color:#7FD094">--e-1</span>: 0 1px 2px rgba(30,35,32,.05);
+  <span style="color:#7FD094">--e-2</span>: 0 1px 2px rgba(30,35,32,.04), 0 8px 24px rgba(30,35,32,.06);
+  <span style="color:#7FD094">--e-3</span>: 0 2px 4px rgba(30,35,32,.06), 0 18px 44px rgba(30,35,32,.10);
+}</pre>
+    </div>
+  </section>
+
+  <footer style="border-top:1px solid #E1E7E2;padding-top:32px;display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;font-size:13.5px;line-height:1.5;color:#66716B">
+    <div>Altorabi Design Guide v1.0 · companion to Brand Book v3.0</div>
+    <div>Where this guide and the brand book disagree, the brand book wins.</div>
+  </footer>
+
+</div>
+</x-dc>
+</body>
+</html>
