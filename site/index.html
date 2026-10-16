@@ -1,0 +1,1107 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Altorabi Design Guide</title>
+<meta name="description" content="Components, illustration and application design, built on the Altorabi Brand Book v3.0.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg viewBox='0 0 120 120' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='120' height='120' fill='%231F7346'/%3E%3Ctext x='60' y='70' font-family='sans-serif' font-size='48' font-weight='700' fill='%23FFFFFF' text-anchor='middle'%3EA%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="css/tokens.css">
+<link rel="stylesheet" href="css/base.css">
+<link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+<main style="max-width:1180px;margin:0 auto;padding:0 24px 96px">
+
+  <header class="flex wrap items-end gap-32" style="justify-content:space-between;padding:64px 0 32px;border-bottom:1px solid var(--rule)">
+    <div style="max-width:640px">
+      <div class="eyebrow mb-16" style="line-height:1.35">Altorabi · Design Guide v1.0</div>
+      <h1 class="fw-700 m-0 mb-16" style="font-family:STC,Helvetica,sans-serif;font-size:44px;line-height:1.02;letter-spacing:-0.03em">The design guide</h1>
+      <p class="text-ink-2 m-0" style="font-size:17px;line-height:1.6;max-width:68ch">Components, illustration and application design, built on the Altorabi Brand Book v3.0. This document is the reference implementation: brand book §01–§11 states the rules, this states what they look like when built. Where the two differ, the brand book wins.</p>
+    </div>
+    <div class="meta flex col gap-8" style="line-height:1.65">
+      <div>Source · Altorabi Brand Book v3.0</div>
+      <div>Base · shadcn/ui, re-skinned</div>
+      <div>Target · WCAG 2.2 AA, EN LTR + AR RTL</div>
+    </div>
+  </header>
+
+  <nav class="flex wrap mb-64 gap-8" style="padding:24px 0 48px;border-bottom:1px solid var(--rule)">
+    <a href="#use" class="nav-chip">01 How to use</a>
+    <a href="#logo" class="nav-chip">02 The logo</a>
+    <a href="#color" class="nav-chip">03 Colour</a>
+    <a href="#type" class="nav-chip">04 Type</a>
+    <a href="#shape" class="nav-chip">05 Space &amp; shape</a>
+    <a href="#components" class="nav-chip">06 Components</a>
+    <a href="#illustration" class="nav-chip">07 Illustration</a>
+    <a href="#charts" class="nav-chip">08 Charts</a>
+    <a href="#app" class="nav-chip">09 App design</a>
+    <a href="#rtl" class="nav-chip">10 Arabic &amp; RTL</a>
+    <a href="#a11y" class="nav-chip">11 Accessibility</a>
+    <a href="#voice" class="nav-chip">12 Voice</a>
+    <a href="#tokens" class="nav-chip">13 Tokens</a>
+  </nav>
+
+  <section id="use" class="section">
+    <div class="eyebrow mb-12">01</div>
+    <h2 class="t-h1 m-0 mb-16">How to use this with an AI model</h2>
+    <p class="lede m-0 mb-32">Paste the brand book, then this guide, then the request. The brand book carries the rules and the token values; this guide carries the shapes. Neither is a suggestion.</p>
+    <div class="grid mb-32 gap-16" style="--col:260px">
+      <div class="fill p-24">
+        <div class="t-h3 mb-8">Copy tokens verbatim</div>
+        <p class="body-sm m-0">Take the §12 block whole. Never adjust a value, never add a grey, never introduce a hue that is not there.</p>
+      </div>
+      <div class="fill p-24">
+        <div class="t-h3 mb-8">Build bilingual first</div>
+        <p class="body-sm m-0">Logical properties, <span class="mono" style="font-size:12px">t()</span> on every string, both directions from the first commit. Retrofitting RTL is a rewrite.</p>
+      </div>
+      <div class="fill p-24">
+        <div class="t-h3 mb-8">Name your gaps</div>
+        <p class="body-sm m-0">Where the system is silent, pick a sensible default, say you chose it, and do not present it as part of the brand.</p>
+      </div>
+    </div>
+    <div class="card clip">
+      <div class="thead" style="padding:16px 24px">
+        <div style="flex:0 0 200px">The three failures</div>
+        <div class="grow">Why it fails</div>
+      </div>
+      <div class="tr" style="padding:16px 24px;font-size:13.5px;line-height:1.5">
+        <div class="fw-600" style="flex:0 0 200px">Brand green as text</div>
+        <div class="grow text-ink-2">#64C379 on white measures 2.18:1. Text green is #1F7346 at 5.83:1.</div>
+      </div>
+      <div class="tr" style="padding:16px 24px;font-size:13.5px;line-height:1.5">
+        <div class="fw-600" style="flex:0 0 200px">Tracking on Arabic</div>
+        <div class="grow text-ink-2">Arabic letters join. Letter-spacing severs them and words come apart.</div>
+      </div>
+      <div class="tr" style="padding:16px 24px;font-size:13.5px;line-height:1.5">
+        <div class="fw-600" style="flex:0 0 200px">Colour-only status</div>
+        <div class="grow text-ink-2">Roughly one man in twelve cannot separate the amber from the green. Always an icon and a word.</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="logo" class="section">
+    <div class="eyebrow mb-12">02</div>
+    <h2 class="t-h1 m-0 mb-16">The logo</h2>
+    <p class="lede m-0 mb-32">A portrait mark and a signature wordmark, locked together. The green stroke through the hair is part of the mark, not an accent that can be recoloured. Five approved variants — nothing outside this set.</p>
+
+    <div class="panel clip mb-24">
+      <div class="label" style="padding:16px 24px;border-bottom:1px solid var(--rule)">The approved set</div>
+      <img src="assets/logo-variants.jpg" alt="Altorabi logo variants: primary logo, primary logo with tagline, wordmark, symbol, and the negative versions on a dark ground" style="display:block;width:100%;height:auto">
+    </div>
+
+    <div class="grid mb-32 gap-16" style="--col:240px">
+      <div class="card p-24">
+        <div class="t-h3 mb-8">Primary</div>
+        <p class="text-ink-2 m-0" style="font-size:13.5px;line-height:1.55">Portrait plus signature, horizontal lockup. The default everywhere it fits.</p>
+      </div>
+      <div class="card p-24">
+        <div class="t-h3 mb-8">Primary + tagline</div>
+        <p class="text-ink-2 m-0" style="font-size:13.5px;line-height:1.55">"An Ecosystem Builder" on a green bar. First impressions only — decks, covers, signage. Not in product UI.</p>
+      </div>
+      <div class="card p-24">
+        <div class="t-h3 mb-8">Wordmark</div>
+        <p class="text-ink-2 m-0" style="font-size:13.5px;line-height:1.55">Signature alone, for narrow spaces and anywhere the portrait would drop below its minimum size.</p>
+      </div>
+      <div class="card p-24">
+        <div class="t-h3 mb-8">Symbol</div>
+        <p class="text-ink-2 m-0" style="font-size:13.5px;line-height:1.55">Portrait alone, for avatars, favicons and app icons. Only where the name is already established.</p>
+      </div>
+      <div class="card p-24">
+        <div class="t-h3 mb-8">Negative</div>
+        <p class="text-ink-2 m-0" style="font-size:13.5px;line-height:1.55">White portrait and wordmark for dark grounds. The green may stay on the hair stroke or drop out entirely.</p>
+      </div>
+    </div>
+
+    <div class="grid mb-32 gap-16" style="--col:300px">
+      <div class="panel clip">
+        <div class="label" style="padding:16px 24px;border-bottom:1px solid var(--rule)">Negative, on grey</div>
+        <img src="assets/logo-negative-pair.jpg" alt="Negative logo with green hair stroke, and fully white, both on a mid-grey ground" style="display:block;width:100%;height:auto">
+      </div>
+      <div class="panel clip">
+        <div class="label" style="padding:16px 24px;border-bottom:1px solid var(--rule)">One-colour, on saturated grounds</div>
+        <img src="assets/logo-on-colour.jpg" alt="Single-colour dark logo on yellow, orange and teal backgrounds" style="display:block;width:100%;height:auto">
+      </div>
+    </div>
+
+    <div class="grid gap-16" style="--col:280px">
+      <div class="fill p-24">
+        <div class="t-h3 mb-12">Clear space and size</div>
+        <ul class="list">
+          <li>Clear space on all four sides equals the cap height of "Altorabi". Nothing enters it.</li>
+          <li>Primary lockup: 120px minimum on screen, 30mm in print.</li>
+          <li>Symbol: 32px minimum. Below that, the beard and brow detail fills in.</li>
+          <li>Below 120px, switch to the wordmark rather than shrinking the portrait.</li>
+        </ul>
+      </div>
+      <div class="card-strong p-24">
+        <div class="t-h3 mb-12">Placement</div>
+        <ul class="list">
+          <li>The logo never mirrors in Arabic layouts. It sits at the start of the reading direction.</li>
+          <li>On photographs, use the negative variant over a flat dark area — never over busy detail.</li>
+          <li>One logo per surface. It does not repeat as a pattern or watermark.</li>
+        </ul>
+      </div>
+      <div class="fill-critical p-24">
+        <div class="t-h3 mb-12">Misuse</div>
+        <ul class="list">
+          <li>Do not stretch, rotate, outline or add a shadow.</li>
+          <li>Do not recolour the portrait or the signature to a hue outside the palette.</li>
+          <li>Do not reset the wordmark in another typeface — it is drawn lettering, not live text.</li>
+          <li>Do not separate the portrait from the signature to build a new lockup.</li>
+          <li>Do not place the full-colour logo on a mid-tone where the dark ink falls below 4.5:1.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="color" class="section">
+    <div class="eyebrow mb-12">03</div>
+    <h2 class="t-h1 m-0 mb-16">Colour</h2>
+    <p class="lede m-0 mb-32">Green is identity, not success. It appears on primary buttons whether or not anything passed.</p>
+
+    <div class="grid mb-48 gap-16" style="--col:180px">
+      <div class="card clip">
+        <div class="flex items-end p-12" style="height:104px;background:var(--green)"><span class="caption" style="color:var(--char)">Fill only</span></div>
+        <div class="p-16"><div class="caption">Brand green</div><div class="meta mt-4">#64C379 · --green</div></div>
+      </div>
+      <div class="card clip">
+        <div class="flex items-end p-12" style="height:104px;background:var(--green-ink)"><span class="caption" style="color:var(--on-green-ink)">5.83:1</span></div>
+        <div class="p-16"><div class="caption">Green ink</div><div class="meta mt-4">#1F7346 · --green-ink</div></div>
+      </div>
+      <div class="card clip">
+        <div style="height:104px;background:var(--char)"></div>
+        <div class="p-16"><div class="caption">Charcoal</div><div class="meta mt-4">#2A2A33 · --char</div></div>
+      </div>
+      <div class="card clip">
+        <div style="height:104px;background:var(--night)"></div>
+        <div class="p-16"><div class="caption">Night</div><div class="meta mt-4">#1A1B21 · --night</div></div>
+      </div>
+      <div class="card clip">
+        <div style="height:104px;background:var(--green-wash)"></div>
+        <div class="p-16"><div class="caption">Green wash</div><div class="meta mt-4">#E6F3EA · --green-wash</div></div>
+      </div>
+      <div class="card clip">
+        <div style="height:104px;background:var(--surface)"></div>
+        <div class="p-16"><div class="caption">Mist</div><div class="meta mt-4">#F1F4F2 · --surface</div></div>
+      </div>
+    </div>
+
+    <h3 class="t-h2 m-0 mb-24">The three green laws, shown</h3>
+    <div class="grid mb-48 gap-16" style="--col:280px">
+      <div class="card p-24">
+        <div class="flex mb-16 gap-12">
+          <div class="grow center p-16" style="background:var(--ground);border:1px solid var(--rule);border-radius:6px"><span class="fw-600" style="color:var(--green);font-size:15.5px">Portfolio</span><div class="mono text-critical mt-8" style="font-size:12px">✕ 2.18:1</div></div>
+          <div class="grow center p-16" style="background:var(--ground);border:1px solid var(--rule);border-radius:6px"><span class="text-green-ink fw-600" style="font-size:15.5px">Portfolio</span><div class="mono text-success mt-8" style="font-size:12px">✓ 5.83:1</div></div>
+        </div>
+        <div class="body-sm">Brand green is a fill. Green text is Green Ink. On night grounds the brand green returns to 7.87:1 and may be text there.</div>
+      </div>
+      <div class="card p-24">
+        <div class="flex items-center mb-16 gap-12">
+          <button class="caption text-ink" style="font-family:inherit;padding:10px 16px;min-height:44px;border-radius:6px;border:1px solid var(--rule);background:var(--ground);outline:2px solid var(--green);outline-offset:2px">Invisible ring</button>
+          <button class="caption text-ink" style="font-family:inherit;padding:10px 16px;min-height:44px;border-radius:6px;border:1px solid var(--rule);background:var(--ground);outline:2px solid var(--green-ink);outline-offset:2px">Focus ring</button>
+        </div>
+        <div class="body-sm">Focus needs 3:1. The ring is Green Ink on light, #7FD094 on dark. Never the brand green.</div>
+      </div>
+      <div class="card p-24">
+        <div class="flex wrap mb-16 gap-12">
+          <span class="caption items-center gap-6" style="display:inline-flex;background:var(--green);color:var(--char);padding:8px 14px;border-radius:6px">Identity · 6.51:1</span>
+          <span class="caption pill tone-success" style="padding:8px 14px">✓ Success</span>
+        </div>
+        <div class="body-sm">Text on brand green is always dark charcoal. Success is its own darker step, #0A7E3A.</div>
+      </div>
+    </div>
+
+    <h3 class="t-h2 m-0 mb-24">Neutrals — three text weights, no more</h3>
+    <div class="grid mb-48 gap-16" style="--col:300px">
+      <div class="card p-24" style="background:var(--ground)">
+        <div class="label mb-16">Light</div>
+        <div class="text-ink mb-8" style="font-size:17px;line-height:1.6">--ink · body and headings · 15.95:1</div>
+        <div class="text-ink-2 mb-8" style="font-size:15.5px;line-height:1.55">--ink-2 · secondary and descriptions · 7.18:1</div>
+        <div class="text-ink-3" style="font-size:13.5px;line-height:1.5">--ink-3 · labels, captions, metadata · 5.07:1</div>
+      </div>
+      <div class="card p-24 theme-ground" data-theme="dark">
+        <div class="label mb-16">Dark</div>
+        <div class="text-ink mb-8" style="font-size:17px;line-height:1.6">--ink · body and headings · 15.66:1</div>
+        <div class="text-ink-2 mb-8" style="font-size:15.5px;line-height:1.55">--ink-2 · secondary and descriptions · 8.64:1</div>
+        <div class="text-ink-3" style="font-size:13.5px;line-height:1.5">--ink-3 · labels, captions, metadata · 5.97:1</div>
+      </div>
+    </div>
+    <p class="note m-0 mb-48">Never use <span class="mono" style="font-size:12px">opacity</span> to make text quieter — it breaks the measured ratio. Step down to --ink-2 or --ink-3 instead.</p>
+
+    <h3 class="t-h2 m-0 mb-24">Status — reserved, never decorative</h3>
+    <div class="grid gap-16" style="--col:210px">
+      <div class="card p-20" style="background:var(--success-bg)">
+        <div class="text-success fw-600 mb-8" style="font-size:15.5px">✓ Success</div>
+        <div class="mono text-ink-2" style="font-size:12px">#0A7E3A · 5.17:1<br>dark #67D283 · 9.68:1</div>
+      </div>
+      <div class="card p-20" style="background:var(--warning-bg)">
+        <div class="fw-600 mb-8" style="color:var(--warning);font-size:15.5px">! Warning</div>
+        <div class="mono text-ink-2" style="font-size:12px">#935B00 · 5.62:1<br>dark #F2AF48 · 9.57:1</div>
+      </div>
+      <div class="card p-20" style="background:var(--serious-bg)">
+        <div class="fw-600 mb-8" style="color:var(--serious);font-size:15.5px">▲ Serious</div>
+        <div class="mono text-ink-2" style="font-size:12px">#AF4803 · 5.60:1<br>dark #F99262 · 8.11:1</div>
+      </div>
+      <div class="card p-20" style="background:var(--critical-bg)">
+        <div class="text-critical fw-600 mb-8" style="font-size:15.5px">✕ Critical</div>
+        <div class="mono text-ink-2" style="font-size:12px">#B32228 · 6.61:1<br>dark #F97770 · 6.88:1</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="type" class="section">
+    <div class="eyebrow mb-12">04</div>
+    <h2 class="t-h1 m-0 mb-16">Typography</h2>
+    <p class="lede m-0 mb-32">STC is the single bilingual family, covering Latin and Arabic in one face at Light 300, Regular 400 and Bold 700. IBM Plex Mono stays for figures and code, where STC has no tabular set. Two families, no third. Do not substitute Inter, Poppins or Space Grotesk.</p>
+
+    <div class="panel mb-32 p-32">
+      <div class="mb-24" style="border-bottom:1px solid var(--rule);padding-bottom:24px">
+        <div class="flex wrap mb-12 gap-16" style="justify-content:space-between"><span class="label">Display · STC Bold 700 · 44–60 / 1.02 / −0.03em</span></div>
+        <div class="fw-700" style="font-family:STC,Helvetica,sans-serif;font-size:52px;line-height:1.02;letter-spacing:-0.03em">Evidence, then the claim</div>
+      </div>
+      <div class="mb-24" style="border-bottom:1px solid var(--rule);padding-bottom:24px">
+        <div class="label mb-12">H1 32 / 1.10 · H2 24 / 1.15 · H3 18 / 1.25 · all Bold 700</div>
+        <div class="t-h1 mb-8">Nine sections, forty documents</div>
+        <div class="t-h2 mb-8">Governance and the data room</div>
+        <div class="t-h3">Board resolutions</div>
+      </div>
+      <div class="mb-24" style="border-bottom:1px solid var(--rule);padding-bottom:24px">
+        <div class="label mb-12">Body large 17 / 1.60 · Body 15.5 / 1.55 · Small 13.5 / 1.50 · Regular 400</div>
+        <p class="m-0 mb-8" style="font-size:17px;line-height:1.6;max-width:68ch">Running text stops at about 68 characters. Set max-width:68ch on prose containers.</p>
+        <p class="lede m-0 mb-8">Body copy is STC Regular 400 at 15.5px with 1.55 line-height, in --ink for primary text and --ink-2 for description.</p>
+        <p class="note m-0">Small is for captions and helper text, in --ink-3.</p>
+      </div>
+      <div class="grid gap-24" style="--col:240px">
+        <div>
+          <div class="label mb-12">Label 11 / 700 / +0.07em</div>
+          <div class="eyebrow">Portfolio company</div>
+        </div>
+        <div>
+          <div class="label mb-12">Mono 12–13 / tabular</div>
+          <div class="mono tnum" style="font-size:13px;line-height:1.65">SAR 12,480,000<br>SAR&nbsp;&nbsp;&nbsp;&nbsp;940,250</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="grid mb-32 gap-16" style="--col:300px">
+      <div class="card p-24">
+        <div class="label mb-16">English · STC Regular 15.5 / 1.55</div>
+        <p class="m-0" style="font-size:15.5px;line-height:1.55">Nine sections and roughly forty documents, ready for a first close in 2026.</p>
+      </div>
+      <div dir="rtl" class="card p-24">
+        <div class="text-green-ink fw-600 mb-16" style="font-size:11px">العربية · 16.5 / 1.75</div>
+        <p class="m-0" style="font-size:16.5px;line-height:1.75">تسعة أقسام وما يقارب أربعين مستنداً، جاهزة للإغلاق الأول في 2026.</p>
+      </div>
+    </div>
+
+    <div class="panel mb-32 p-32">
+      <div class="text-ink-3 fw-700 mb-24" style="font-size:11px;letter-spacing:0.07em;text-transform:uppercase">STC · the three shipped weights</div>
+      <div class="grid gap-32" style="--col:260px">
+        <div>
+          <div class="mb-8" style="font-weight:300;font-size:30px;line-height:1.2">Altorabi Holding</div>
+          <div dir="rtl" class="mb-12" style="font-weight:300;font-size:30px;line-height:1.45">الترابي القابضة</div>
+          <div class="meta">Light 300 · display only, never body</div>
+        </div>
+        <div>
+          <div class="mb-8" style="font-weight:400;font-size:30px;line-height:1.2">Altorabi Holding</div>
+          <div dir="rtl" class="mb-12" style="font-weight:400;font-size:30px;line-height:1.45">الترابي القابضة</div>
+          <div class="meta">Regular 400 · all body and UI text</div>
+        </div>
+        <div>
+          <div class="fw-700 mb-8" style="font-size:30px;line-height:1.2">Altorabi Holding</div>
+          <div dir="rtl" class="fw-700 mb-12" style="font-size:30px;line-height:1.45">الترابي القابضة</div>
+          <div class="meta">Bold 700 · headings, labels, buttons</div>
+        </div>
+      </div>
+      <p class="body-sm" style="margin:24px 0 0;max-width:68ch;border-top:1px solid var(--rule);padding-top:20px">There is no 500 or 600. Where a component in this guide reads <span class="mono" style="font-size:12px">font-weight:600</span>, the browser renders STC Bold — that is intended. Never let a renderer synthesise the missing weights.</p>
+    </div>
+
+    <div class="grid gap-16" style="--col:280px">
+      <div class="fill p-24">
+        <div class="t-h3 mb-12">Always</div>
+        <ul class="text-ink-2 m-0" style="padding-inline-start:20px;font-size:13.5px;line-height:1.6">
+          <li>Western numerals 0 1 2 3 in both languages.</li>
+          <li>tabular-nums wherever digits align in a column.</li>
+          <li>Arabic at +1px and +0.2 line-height.</li>
+          <li>Arabic face applied by direction, not by class.</li>
+        </ul>
+      </div>
+      <div class="fill-critical p-24">
+        <div class="t-h3 mb-12">Never</div>
+        <ul class="text-ink-2 m-0" style="padding-inline-start:20px;font-size:13.5px;line-height:1.6">
+          <li>letter-spacing on Arabic, in any amount.</li>
+          <li>text-transform: uppercase on Arabic — it silently does nothing.</li>
+          <li>A third typeface, faux bold, faux italic, or synthesised 500 / 600 weights.</li>
+          <li>Arabic-Indic digits ٠١٢٣ in interfaces.</li>
+        </ul>
+      </div>
+      <div class="card-strong p-24">
+        <div class="t-h3 mb-12">Working with STC</div>
+        <p class="text-ink-2 m-0" style="font-size:13.5px;line-height:1.6">Adopted at the client's direction, superseding §03 of the brand book. Three weights ship — 300 / 400 / 700 — so there is no 500 or 600: emphasis goes straight from Regular to Bold, and any UI that wanted a semibold uses Bold. Confirm the licence covers web embedding and product use, and confirm Latin accent coverage before shipping a European locale. Figures are not tabular, so columns of numbers stay in IBM Plex Mono.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="shape" class="section">
+    <div class="eyebrow mb-12">05</div>
+    <h2 class="t-h1 m-0 mb-16">Space, shape, elevation</h2>
+    <p class="lede m-0 mb-32">Not everything is a card. Border, fill, radius and shadow each announce "separate object" — spend them by role.</p>
+
+    <div class="card mb-24 p-24">
+      <div class="label mb-20">Spacing · 4px grid · these eight values only</div>
+      <div class="flex wrap items-end gap-16">
+        <div class="center"><div style="width:4px;height:4px;background:var(--green-ink)"></div><div class="meta mt-8">4</div></div>
+        <div class="center"><div style="width:8px;height:8px;background:var(--green-ink)"></div><div class="meta mt-8">8</div></div>
+        <div class="center"><div style="width:12px;height:12px;background:var(--green-ink)"></div><div class="meta mt-8">12</div></div>
+        <div class="center"><div style="width:16px;height:16px;background:var(--green-ink)"></div><div class="meta mt-8">16</div></div>
+        <div class="center"><div style="width:24px;height:24px;background:var(--green-ink)"></div><div class="meta mt-8">24</div></div>
+        <div class="center"><div style="width:32px;height:32px;background:var(--green-ink)"></div><div class="meta mt-8">32</div></div>
+        <div class="center"><div style="width:48px;height:48px;background:var(--green-ink)"></div><div class="meta mt-8">48</div></div>
+        <div class="center"><div style="width:64px;height:64px;background:var(--green-ink)"></div><div class="meta mt-8">64</div></div>
+      </div>
+    </div>
+
+    <div class="grid mb-24 gap-16" style="--col:300px">
+      <div class="card p-24">
+        <div class="label mb-20">Radius by role</div>
+        <div class="flex wrap gap-16">
+          <div class="center"><div style="width:72px;height:56px;background:var(--green-wash);border:1px solid var(--rule-strong);border-radius:6px"></div><div class="meta mt-8">6 · sm</div><div class="text-ink-3" style="font-size:11px">buttons, inputs</div></div>
+          <div class="center"><div class="card-strong" style="width:72px;height:56px;background:var(--green-wash)"></div><div class="meta mt-8">10 · md</div><div class="text-ink-3" style="font-size:11px">cards, alerts</div></div>
+          <div class="center"><div style="width:72px;height:56px;background:var(--green-wash);border:1px solid var(--rule-strong);border-radius:14px"></div><div class="meta mt-8">14 · lg</div><div class="text-ink-3" style="font-size:11px">panels, modals</div></div>
+          <div class="center"><div style="width:72px;height:56px;background:var(--green-wash);border:1px solid var(--rule-strong);border-radius:999px"></div><div class="meta mt-8">999 · pill</div><div class="text-ink-3" style="font-size:11px">status pills only</div></div>
+        </div>
+      </div>
+      <div class="card p-24" style="background:var(--surface)">
+        <div class="label mb-20">Elevation · three levels, no fourth</div>
+        <div class="flex wrap gap-16">
+          <div class="center"><div style="width:88px;height:64px;background:var(--ground);border-radius:10px;box-shadow:0 1px 2px rgba(30,35,32,.05)"></div><div class="meta mt-12">--e-1</div><div class="text-ink-3" style="font-size:11px">resting card</div></div>
+          <div class="center"><div style="width:88px;height:64px;background:var(--ground);border-radius:10px;box-shadow:0 1px 2px rgba(30,35,32,.04),0 8px 24px rgba(30,35,32,.06)"></div><div class="meta mt-12">--e-2</div><div class="text-ink-3" style="font-size:11px">dropdown</div></div>
+          <div class="center"><div style="width:88px;height:64px;background:var(--ground);border-radius:14px;box-shadow:0 2px 4px rgba(30,35,32,.06),0 18px 44px rgba(30,35,32,.10)"></div><div class="meta mt-12">--e-3</div><div class="text-ink-3" style="font-size:11px">modal</div></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card clip">
+      <div class="thead" style="padding:12px 24px">
+        <div style="flex:0 0 96px">Breakpoint</div><div style="flex:0 0 110px">Width</div><div class="grow">Layout</div>
+      </div>
+      <div class="tr" style="padding:12px 24px;font-size:13.5px;line-height:1.5"><div class="fw-600" style="flex:0 0 96px">Mobile</div><div class="meta" style="flex:0 0 110px">&lt; 640</div><div class="grow text-ink-2">One column, nav in a drawer, tables scroll in their own container</div></div>
+      <div class="tr" style="padding:12px 24px;font-size:13.5px;line-height:1.5"><div class="fw-600" style="flex:0 0 96px">Tablet</div><div class="meta" style="flex:0 0 110px">640–1023</div><div class="grow text-ink-2">Two columns, nav collapses to icons</div></div>
+      <div class="tr" style="padding:12px 24px;font-size:13.5px;line-height:1.5"><div class="fw-600" style="flex:0 0 96px">Desktop</div><div class="meta" style="flex:0 0 110px">1024–1439</div><div class="grow text-ink-2">Sidebar plus content, 12-column grid</div></div>
+      <div class="tr" style="padding:12px 24px;font-size:13.5px;line-height:1.5"><div class="fw-600" style="flex:0 0 96px">Wide</div><div class="meta" style="flex:0 0 110px">≥ 1440</div><div class="grow text-ink-2">Content caps at 1280, sidebar stays fixed</div></div>
+    </div>
+  </section>
+
+  <section id="components" class="section">
+    <div class="eyebrow mb-12">06</div>
+    <h2 class="t-h1 m-0 mb-16">Components</h2>
+    <p class="lede m-0 mb-32">shadcn/ui is the base, re-skinned through the tokens. Do not hand-roll primitives. Every specimen below is at its shipping size: 44px minimum hit area, tokens only, no literal hex inside a component.</p>
+
+    <h3 class="t-h2 m-0 mb-8">Buttons</h3>
+    <p class="note m-0 mb-24">One primary per view — the single thing you want done. Primary is Green Ink, not the brand green. The label says exactly what happens: "Publish", then a toast reading "Published".</p>
+    <div class="panel mb-24 p-32">
+      <div class="flex wrap items-center mb-24 gap-12">
+        <button class="btn btn-md btn-primary">Publish</button>
+        <button class="btn btn-md btn-secondary">Save draft</button>
+        <button class="btn btn-ghost" style="padding:12px 16px">Add document</button>
+        <button class="btn btn-md btn-critical">Delete company</button>
+        <button disabled="disabled" class="btn-md text-ink-3 fw-600" style="font-family:inherit;font-size:15.5px;min-height:44px;border:1px solid var(--rule);border-radius:6px;background:var(--surface)">Publish</button>
+        <button aria-label="More actions" class="btn-secondary" style="font-family:inherit;font-size:15.5px;width:44px;height:44px;border-radius:6px;cursor:pointer">···</button>
+      </div>
+      <div class="meta grid gap-16" style="--col:170px;line-height:1.6;border-top:1px solid var(--rule);padding-top:20px">
+        <div>Primary<br>--green-ink</div>
+        <div>Secondary<br>--ground + --rule-strong</div>
+        <div>Tertiary<br>--green-ink, no fill</div>
+        <div>Destructive<br>--critical + confirm</div>
+        <div>Disabled<br>--surface / --ink-3</div>
+        <div>Icon-only<br>44px + aria-label</div>
+      </div>
+    </div>
+    <div class="mb-48 p-32 theme-ground" data-theme="dark" style="border-radius:14px">
+      <div class="label mb-20">Same components, dark tokens</div>
+      <div class="flex wrap items-center mb-20 gap-12">
+        <button class="btn btn-md btn-primary">Publish</button>
+        <button class="btn btn-md btn-secondary">Save draft</button>
+        <button class="btn btn-ghost" style="padding:12px 16px">Add document</button>
+      </div>
+      <p class="body-sm m-0" style="max-width:68ch">White text on #7FD094 measures 1.85:1. In dark theme --on-green-ink flips to near-black, 9.16:1. Fix pairings at token level, never inside a component.</p>
+    </div>
+
+    <h3 class="t-h2 m-0 mb-8">Form fields</h3>
+    <p class="note m-0 mb-24">Label above, helper below, error replacing the helper. An error names the fix, not the failure.</p>
+    <div class="grid mb-48 gap-16" style="--col:300px">
+      <div class="panel flex col p-24 gap-24">
+        <div>
+          <label for="g-co" class="caption mb-8" style="display:block">Company</label>
+          <input id="g-co" type="text" value="Riyadh Logistics Co." class="field" style="font-family:inherit;font-size:15.5px;border:1px solid var(--rule-strong)">
+          <div class="text-ink-3 mt-8" style="font-size:13.5px;line-height:1.5">Legal name as registered.</div>
+        </div>
+        <div>
+          <label for="g-file" class="caption mb-8" style="display:block">Term sheet</label>
+          <input id="g-file" type="text" value="term-sheet-v4.pdf" class="field" style="font-family:inherit;font-size:15.5px;border:1px solid var(--critical)">
+          <div class="text-critical mt-8" style="font-size:13.5px;line-height:1.5">✕ That file is 48 MB. The limit is 25 MB — compress it or split it in two.</div>
+        </div>
+        <div class="flex gap-12" style="align-items:flex-start">
+          <div class="flex items-center" style="width:20px;height:20px;flex:0 0 20px;margin-top:3px;border-radius:4px;background:var(--green-ink);color:var(--on-green-ink);justify-content:center;font-size:12px">✓</div>
+          <div>
+            <div class="fw-500" style="font-size:15.5px">Notify the board</div>
+            <div class="text-ink-3" style="font-size:13.5px;line-height:1.5">Someone manages notifications, not webhook configuration.</div>
+          </div>
+        </div>
+      </div>
+      <div dir="rtl" class="panel flex col p-24 gap-24">
+        <div class="text-green-ink fw-600" style="font-size:12px">النسخة العربية — نفس المكوّن، اتجاه معاكس</div>
+        <div>
+          <label for="g-co-ar" class="fw-600 mb-8" style="display:block;font-size:14.5px">الشركة</label>
+          <input id="g-co-ar" type="text" value="شركة الرياض للخدمات اللوجستية" class="field" style="font-family:inherit;font-size:16.5px;border:1px solid var(--rule-strong);text-align:start">
+          <div class="text-ink-3 mt-8" style="font-size:14.5px;line-height:1.75">الاسم النظامي كما هو مسجّل.</div>
+        </div>
+        <div>
+          <label for="g-amt-ar" class="fw-600 mb-8" style="display:block;font-size:14.5px">قيمة الجولة</label>
+          <input id="g-amt-ar" type="text" value="12,480,000" class="mono tnum field" style="font-size:15px;border:1px solid var(--rule-strong);text-align:start">
+          <div class="text-ink-3 mt-8" style="font-size:14.5px;line-height:1.75">الأرقام الغربية في اللغتين.</div>
+        </div>
+        <div class="flex gap-12">
+          <button class="btn btn-md btn-primary">نشر</button>
+          <button class="btn btn-md btn-secondary">حفظ مسودة</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="t-h2 m-0 mb-8">Status pills, cards and alerts</h3>
+    <p class="note m-0 mb-24">Status is never carried by colour alone. Every pill has an icon and a word, so it survives greyscale printing and colour-blindness alike.</p>
+    <div class="panel flex wrap mb-24 p-24 gap-12">
+      <span class="pill pill-md tone-success">✓ Complete</span>
+      <span class="pill pill-md tone-warning">! In review</span>
+      <span class="pill pill-md tone-serious">▲ At risk</span>
+      <span class="pill pill-md tone-critical">✕ Blocked</span>
+      <span class="pill pill-md tone-neutral">— Not started</span>
+    </div>
+
+    <div class="grid mb-24 gap-16" style="--col:280px">
+      <div class="card p-24" style="background:var(--ground);box-shadow:0 1px 2px rgba(30,35,32,.05)">
+        <div class="flex mb-16 gap-16" style="justify-content:space-between;align-items:flex-start">
+          <div>
+            <div class="label mb-6">Portfolio company</div>
+            <div class="t-h3">Riyadh Logistics Co.</div>
+          </div>
+          <span class="caption pill tone-success" style="padding:6px 12px">✓ Complete</span>
+        </div>
+        <div class="flex wrap gap-32" style="padding-top:16px;border-top:1px solid var(--rule)">
+          <div><div class="label mb-4">Holding</div><div class="mono tnum" style="font-size:15px">34.0%</div></div>
+          <div><div class="label mb-4">Invested</div><div class="mono tnum" style="font-size:15px">SAR 12,480,000</div></div>
+        </div>
+      </div>
+      <div class="card flex col p-24 gap-16">
+        <div class="label">Card anatomy</div>
+        <ul class="list">
+          <li>Radius 10, border --rule, elevation --e-1. Never border plus heavy shadow plus fill together.</li>
+          <li>Label 11px, title STC Bold 18, metrics in mono with tabular figures.</li>
+          <li>A card is a real object with its own identity. A row in a list is not a card.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="grid mb-48 gap-16" style="--col:300px">
+      <div class="flex gap-12" style="background:var(--success-bg);border-radius:10px;padding:16px 20px">
+        <div class="text-success" style="font-size:15.5px;line-height:1.5">✓</div>
+        <div><div class="text-success fw-600 mb-4" style="font-size:15.5px">Data room published</div><div class="body-sm">Nine sections are now visible to invited investors.</div></div>
+      </div>
+      <div class="flex gap-12" style="background:var(--warning-bg);border-radius:10px;padding:16px 20px">
+        <div style="color:var(--warning);font-size:15.5px;line-height:1.5">!</div>
+        <div><div class="fw-600 mb-4" style="font-size:15.5px;color:var(--warning)">Four documents still in review</div><div class="body-sm">They stay hidden until legal signs off.</div></div>
+      </div>
+      <div class="fill-critical flex gap-12" style="padding:16px 20px">
+        <div class="text-critical" style="font-size:15.5px;line-height:1.5">✕</div>
+        <div><div class="text-critical fw-600 mb-4" style="font-size:15.5px">Upload failed</div><div class="body-sm">The connection dropped at 60%. Retry and it resumes where it stopped.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="t-h2 m-0 mb-8">Tables</h3>
+    <p class="note m-0 mb-24">Numbers right-aligned and tabular, text start-aligned, header in label style, rows separated by a rule and never by zebra stripes. Density is comfortable by default; compact is a user setting, not a design decision.</p>
+    <div class="card clip mb-24">
+      <div class="thead btn-md">
+        <div class="cell-2">Company</div><div class="cell">Stage</div><div class="cell">Status</div><div class="cell" style="text-align:end">Invested</div>
+      </div>
+      <div class="tr tr-data">
+        <div class="cell-2 fw-500">Riyadh Logistics Co.</div><div class="cell text-ink-2">Series A</div>
+        <div class="cell"><span class="pill pill-sm tone-success">✓ Complete</span></div>
+        <div class="cell num">12,480,000</div>
+      </div>
+      <div class="tr tr-data">
+        <div class="cell-2 fw-500">Najd Agritech</div><div class="cell text-ink-2">Seed</div>
+        <div class="cell"><span class="pill pill-sm tone-warning">! In review</span></div>
+        <div class="cell num">940,250</div>
+      </div>
+      <div class="tr tr-data">
+        <div class="cell-2 fw-500">Hail Cold Chain</div><div class="cell text-ink-2">Series B</div>
+        <div class="cell"><span class="pill pill-sm tone-serious">▲ At risk</span></div>
+        <div class="cell num">28,100,000</div>
+      </div>
+      <div class="tr-data flex gap-16" style="border-top:1px solid var(--rule-strong);background:var(--surface)">
+        <div class="cell-2 fw-600">Total · 3 companies</div><div class="cell"></div><div class="cell"></div>
+        <div class="cell num fw-500">41,520,250</div>
+      </div>
+    </div>
+
+    <h3 class="t-h2" style="margin:48px 0 8px">Empty, loading, error</h3>
+    <p class="note m-0 mb-24">Design all three before shipping the happy path. An empty state names the thing, says why it is empty, and offers the one action that fills it.</p>
+    <div class="grid mb-48 gap-16" style="--col:280px">
+      <div class="card center" style="padding:32px 24px">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="mb-16" aria-hidden="true">
+          <rect x="12" y="8" width="32" height="44" rx="3" stroke="#CBD4CE" stroke-width="2.5"></rect>
+          <path d="M20 22h16M20 30h16M20 38h10" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="46" cy="44" r="11" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+          <path d="M46 39v10M41 44h10" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        <div class="t-h3 mb-8">No documents yet</div>
+        <p class="body-sm m-0 mb-20">This section holds board resolutions. Add the first one and it becomes visible to invited investors.</p>
+        <button class="btn btn-md btn-primary">Add document</button>
+      </div>
+      <div class="card p-24">
+        <div class="label mb-20">Loading · skeleton, not a spinner</div>
+        <div class="flex col gap-12">
+          <div style="height:14px;width:60%;border-radius:4px;background:var(--skeleton)"></div>
+          <div style="height:14px;width:100%;border-radius:4px;background:var(--skeleton)"></div>
+          <div style="height:14px;width:85%;border-radius:4px;background:var(--skeleton)"></div>
+          <div class="mt-8" style="height:44px;width:100%;border-radius:6px;background:var(--surface)"></div>
+        </div>
+        <p class="body-sm" style="margin:20px 0 0">Skeletons mirror the shape of the content that is coming, so nothing jumps when it lands.</p>
+      </div>
+      <div class="card center" style="padding:32px 24px">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" class="mb-16" aria-hidden="true">
+          <circle cx="32" cy="32" r="22" fill="#FAE7E7" stroke="#B32228" stroke-width="2.5"></circle>
+          <path d="M32 21v15M32 42.5v.5" stroke="#B32228" stroke-width="3" stroke-linecap="round"></path>
+        </svg>
+        <div class="t-h3 mb-8">We could not load the portfolio</div>
+        <p class="body-sm m-0 mb-20">The request timed out. Nothing was lost — try again, or contact us if it keeps happening.</p>
+        <button class="btn btn-md btn-secondary">Try again</button>
+      </div>
+    </div>
+  </section>
+
+  <section id="illustration" class="section">
+    <div class="eyebrow mb-12">07</div>
+    <h2 class="t-h1 m-0 mb-16">Illustration and icons</h2>
+    <p class="lede m-0 mb-32">One drawing language, taken from the mark: even strokes, round caps, geometric construction, a single flat green accent on an otherwise neutral line drawing. No gradients, no soft shadows, no isometric scenes, no faces, no 3D.</p>
+    <div class="grid mb-32 gap-16" style="--col:240px">
+      <div class="card p-24">
+        <div class="label mb-16">Construction</div>
+        <ul class="list">
+          <li>Drawn on a 24px grid, scaled in multiples.</li>
+          <li>Stroke 1.75px at icon size, 2.5px at spot size.</li>
+          <li>Round caps and round joins, matching the mark.</li>
+          <li>Rectangles take a 3–4px corner radius, never sharp.</li>
+        </ul>
+      </div>
+      <div class="card p-24">
+        <div class="label mb-16">Colour in drawings</div>
+        <ul class="list">
+          <li>Line in --ink-2 or --rule-strong, never pure black.</li>
+          <li>One accent per drawing: --green-wash fill with a --green-ink line.</li>
+          <li>Brand green appears only as a small solid fill, never as a hairline.</li>
+          <li>Status colours in a drawing only when the drawing is about status.</li>
+        </ul>
+      </div>
+      <div class="fill-critical p-24" style="border:1px solid var(--critical-bg)">
+        <div class="text-critical fw-600 mb-16" style="font-size:11px;letter-spacing:0.07em;text-transform:uppercase">Never</div>
+        <ul class="list">
+          <li>Stock vector people, blobs, glassmorphism, 3D renders.</li>
+          <li>Gradient fills of any kind.</li>
+          <li>Decoration in an empty state that carries no meaning.</li>
+          <li>An illustration doing work a single number should do.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <h3 class="t-h2 m-0 mb-8">Spot illustrations · 64px</h3>
+    <p class="note m-0 mb-24">Each carries one idea and no more than five shapes. Use them in empty states, onboarding steps and section headers.</p>
+    <div class="panel grid mb-48 p-32 gap-32" style="--col:150px">
+      <div class="center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <rect x="10" y="12" width="30" height="40" rx="3" stroke="#4F5A54" stroke-width="2.5"></rect>
+          <path d="M18 24h14M18 32h14M18 40h9" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="45" cy="42" r="11" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+          <path d="M45 37v10M40 42h10" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        <div class="caption mt-12">Add a document</div>
+      </div>
+      <div class="center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <rect x="8" y="14" width="48" height="36" rx="3" stroke="#4F5A54" stroke-width="2.5"></rect>
+          <path d="M8 24h48" stroke="#4F5A54" stroke-width="2.5"></path>
+          <path d="M26 24v26M41 24v26" stroke="#CBD4CE" stroke-width="2.5"></path>
+          <rect x="8" y="14" width="18" height="10" fill="#64C379"></rect>
+        </svg>
+        <div class="caption mt-12">Cap table</div>
+      </div>
+      <div class="center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M12 48V32M26 48V20M40 48V38M54 48V26" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+          <path d="M8 54h48" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="26" cy="20" r="5" fill="#64C379"></circle>
+        </svg>
+        <div class="caption mt-12">Performance</div>
+      </div>
+      <div class="center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <path d="M32 8l20 8v16c0 12-8 20-20 24C20 52 12 44 12 32V16l20-8z" stroke="#4F5A54" stroke-width="2.5" stroke-linejoin="round"></path>
+          <path d="M24 32l6 6 12-13" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+        </svg>
+        <div class="caption mt-12">Governance</div>
+      </div>
+      <div class="center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <circle cx="22" cy="22" r="9" stroke="#4F5A54" stroke-width="2.5"></circle>
+          <circle cx="42" cy="22" r="9" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+          <path d="M10 52c0-8 5.5-13 12-13s12 5 12 13M30 52c0-8 5.5-13 12-13s12 5 12 13" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+        </svg>
+        <div class="caption mt-12">Investors</div>
+      </div>
+      <div class="center">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+          <rect x="12" y="26" width="40" height="28" rx="3" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></rect>
+          <path d="M22 26v-8a10 10 0 0120 0v8" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+          <circle cx="32" cy="40" r="3.5" fill="#1F7346"></circle>
+        </svg>
+        <div class="caption mt-12">Secure room</div>
+      </div>
+    </div>
+
+    <h3 class="t-h2 m-0 mb-8">Icons · 20–24px</h3>
+    <p class="note m-0 mb-24">Lucide, unmodified, at 1.75px stroke. Do not mix icon sets and do not redraw them. An icon never appears alone as a control unless it carries an aria-label and a tooltip.</p>
+    <div class="panel flex wrap mb-48 p-32 gap-32">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path><path d="M9 22V12h6v10"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"></path><path d="M14 2v6h6"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 3v18h18"></path><path d="M18 9l-5 5-3-3-4 4"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="7" r="4"></circle><path d="M2 21v-2a5 5 0 015-5h4a5 5 0 015 5v2"></path><path d="M17 11h5M19.5 8.5v5"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="11" width="18" height="11" rx="2"></rect><path d="M7 11V7a5 5 0 0110 0v4"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"></circle><path d="M21 21l-4.3-4.3"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2a10 10 0 100 20 10 10 0 000-20z"></path><path d="M12 8v4l3 2"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M20 6L9 17l-5-5"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5v14M5 12h14"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"></path><path d="M7 10l5 5 5-5M12 15V3"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="3"></circle><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 11-2.83 2.83l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 11-4 0v-.09A1.65 1.65 0 008 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 11-2.83-2.83l.06-.06A1.65 1.65 0 004.6 15a1.65 1.65 0 00-1.51-1H3a2 2 0 110-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 112.83-2.83l.06.06A1.65 1.65 0 009 4.6a1.65 1.65 0 001-1.51V3a2 2 0 114 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 112.83 2.83l-.06.06A1.65 1.65 0 0019.4 9v0a1.65 1.65 0 001.51 1H21a2 2 0 110 4h-.09a1.65 1.65 0 00-1.51 1z"></path></svg>
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#1E2320" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6L6 18M6 6l12 12"></path></svg>
+    </div>
+
+    <h3 class="t-h2 m-0 mb-8">Photography</h3>
+    <p class="note m-0 mb-24">Real operations, real places, real people at work — logistics yards, plant floors, meeting rooms. Never stock handshakes, never skyline clichés, never a photograph of nothing. Frames below are placeholders, to be replaced with commissioned or licensed photography.</p>
+    <div class="grid mb-24 gap-16" style="--col:220px">
+      <div class="fill flex col items-center center p-16 gap-8" style="border:1px dashed var(--rule-strong);aspect-ratio:3/2;justify-content:center">
+        <div class="label">3:2 · hero</div>
+        <div class="body-sm">Operations in progress, wide, natural light</div>
+      </div>
+      <div class="fill flex col items-center center p-16 gap-8" style="border:1px dashed var(--rule-strong);aspect-ratio:3/2;justify-content:center">
+        <div class="label">3:2 · portrait</div>
+        <div class="body-sm">Person at their actual work, eye level, no posing</div>
+      </div>
+      <div class="fill flex col items-center center p-16 gap-8" style="border:1px dashed var(--rule-strong);aspect-ratio:3/2;justify-content:center">
+        <div class="label">3:2 · detail</div>
+        <div class="body-sm">Close crop on material, machinery, product</div>
+      </div>
+    </div>
+    <div class="grid gap-16" style="--col:280px">
+      <div class="fill p-24">
+        <div class="t-h3 mb-12">Treatment</div>
+        <ul class="list">
+          <li>Natural colour. No duotone, no green wash over the image.</li>
+          <li>Crop to 3:2 or 16:9. Radius 10 to match cards.</li>
+          <li>Text over photography needs a solid scrim, not opacity on the type.</li>
+        </ul>
+      </div>
+      <div class="fill p-24">
+        <div class="t-h3 mb-12">Which to use when</div>
+        <ul class="list">
+          <li>Photography for people, places and proof.</li>
+          <li>Illustration for structures, flows and states.</li>
+          <li>Charts for anything quantitative. Never illustrate a number.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="panel mb-24 p-32">
+      <div class="label mb-24">Spot set · 64px · use in empty states and section headers</div>
+      <div class="grid gap-24" style="--col:150px">
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="10" y="10" width="44" height="44" rx="4" fill="#E6F3EA" stroke="#4F5A54" stroke-width="2.5"></rect>
+            <path d="M10 24h44M24 24v30" stroke="#4F5A54" stroke-width="2.5"></path>
+            <path d="M33 34h13M33 42h9" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <div class="caption mt-12">Data room</div>
+        </div>
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <path d="M14 50V30M27 50V18M40 50V38M53 50V24" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+            <path d="M8 56h48" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+            <circle cx="27" cy="18" r="4.5" fill="#64C379"></circle>
+          </svg>
+          <div class="caption mt-12">Performance</div>
+        </div>
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="32" cy="32" r="21" fill="#E6F3EA" stroke="#4F5A54" stroke-width="2.5"></circle>
+            <path d="M32 11a21 21 0 0 1 18.2 31.5L32 32z" fill="#64C379"></path>
+            <circle cx="32" cy="32" r="7" fill="#FFFFFF" stroke="#4F5A54" stroke-width="2.5"></circle>
+          </svg>
+          <div class="caption mt-12">Cap table</div>
+        </div>
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <rect x="12" y="8" width="32" height="44" rx="4" stroke="#4F5A54" stroke-width="2.5"></rect>
+            <path d="M20 22h16M20 30h16M20 38h9" stroke="#CBD4CE" stroke-width="2.5" stroke-linecap="round"></path>
+            <circle cx="45" cy="44" r="11" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+            <path d="M40.5 44.5l3 3 6-6.5" stroke="#1F7346" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"></path>
+          </svg>
+          <div class="caption mt-12">Approved</div>
+        </div>
+        <div>
+          <svg width="64" height="64" viewBox="0 0 64 64" fill="none" aria-hidden="true">
+            <circle cx="22" cy="22" r="9" stroke="#4F5A54" stroke-width="2.5"></circle>
+            <circle cx="44" cy="40" r="9" fill="#E6F3EA" stroke="#1F7346" stroke-width="2.5"></circle>
+            <path d="M10 52c0-7 5.4-12 12-12M32 52c0-7 5.4-12 12-12" stroke="#4F5A54" stroke-width="2.5" stroke-linecap="round"></path>
+          </svg>
+          <div class="caption mt-12">Investors</div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-16" style="--col:260px">
+      <div class="card p-24">
+        <div class="t-h3 mb-12">Construction</div>
+        <ul class="list">
+          <li>24px grid, 2.5px stroke, round cap and join.</li>
+          <li>Line in --ink-2, accent in --green-ink, fill in --green-wash or --green.</li>
+          <li>Radius 4 on rectangles. Flat and front-on.</li>
+          <li>Five shapes maximum per drawing.</li>
+        </ul>
+      </div>
+      <div class="card p-24">
+        <div class="t-h3 mb-12">Three scales</div>
+        <ul class="list">
+          <li>Icon 20–24px, 1.75px stroke, one colour, no fill.</li>
+          <li>Spot 64px, 2.5px stroke, one wash accent.</li>
+          <li>Scene 160–240px, same weights, never more detail.</li>
+        </ul>
+      </div>
+      <div class="fill-critical p-24">
+        <div class="t-h3 mb-12">Never</div>
+        <ul class="list">
+          <li>Stock vector people, blobs, 3D renders, glassmorphism.</li>
+          <li>Gradient fills, or the brand green as a hairline.</li>
+          <li>Decoration that carries no meaning.</li>
+          <li>An illustration doing the work a number should do.</li>
+        </ul>
+      </div>
+      <div class="card-strong p-24">
+        <div class="t-h3 mb-12">Photography</div>
+        <p class="text-ink-2 m-0 mb-12" style="font-size:13.5px;line-height:1.6">Drawings explain structure. Where the subject is a real place, person or building, use a photograph instead: available light, real settings, no stock handshakes or glass towers at sunset.</p>
+        <div class="meta flex items-center" style="height:88px;border:1px dashed var(--rule-strong);border-radius:6px;justify-content:center;background:var(--surface)">photo slot · 16:9</div>
+      </div>
+    </div>
+  </section>
+
+  <section id="charts" class="section">
+    <div class="eyebrow mb-12">08</div>
+    <h2 class="t-h1 m-0 mb-16">Charts and data</h2>
+    <p class="lede m-0 mb-32">Series colours run in a fixed order, so a category keeps its colour across every chart in a document. Axis labels in --ink-3, gridlines in --rule, and the value always legible as a number, not only as a shape.</p>
+    <div class="panel flex wrap p-32 gap-24">
+      <div class="flex items-center gap-10"><div style="width:28px;height:28px;border-radius:4px;background:var(--green-ink)"></div><div><div class="fw-700" style="font-size:13.5px">Series 1</div><div class="meta">#1F7346</div></div></div>
+      <div class="flex items-center gap-10"><div style="width:28px;height:28px;border-radius:4px;background:var(--green)"></div><div><div class="fw-700" style="font-size:13.5px">Series 2</div><div class="meta">#64C379</div></div></div>
+      <div class="flex items-center gap-10"><div style="width:28px;height:28px;border-radius:4px;background:var(--char)"></div><div><div class="fw-700" style="font-size:13.5px">Series 3</div><div class="meta">#2A2A33</div></div></div>
+      <div class="flex items-center gap-10"><div style="width:28px;height:28px;border-radius:4px;background:var(--series-4)"></div><div><div class="fw-700" style="font-size:13.5px">Series 4</div><div class="meta">#A9B7AE</div></div></div>
+      <div class="flex items-center gap-10"><div style="width:28px;height:28px;border-radius:4px;background:var(--series-5)"></div><div><div class="fw-700" style="font-size:13.5px">Series 5</div><div class="meta">#C3E8CE</div></div></div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid mb-24 gap-16" style="--col:300px">
+      <div class="card p-24">
+        <div class="label mb-4">Capital deployed</div>
+        <div class="t-h2 mb-24">SAR 41.5M · 3 companies</div>
+        <div class="flex items-end gap-16" style="height:150px;border-bottom:1px solid var(--rule)">
+          <div class="flex col grow gap-8" style="justify-content:flex-end;height:100%"><div class="mono tnum center text-ink-2" style="font-size:12px">12.5</div><div style="background:var(--green-ink);border-radius:3px 3px 0 0;height:44%"></div></div>
+          <div class="flex col grow gap-8" style="justify-content:flex-end;height:100%"><div class="mono tnum center text-ink-2" style="font-size:12px">0.9</div><div style="background:var(--green-ink);border-radius:3px 3px 0 0;height:5%"></div></div>
+          <div class="flex col grow gap-8" style="justify-content:flex-end;height:100%"><div class="mono tnum center text-ink-2" style="font-size:12px">28.1</div><div style="background:var(--green-ink);border-radius:3px 3px 0 0;height:100%"></div></div>
+        </div>
+        <div class="flex mt-10 gap-16">
+          <div class="grow center text-ink-3" style="font-size:13.5px">Riyadh</div>
+          <div class="grow center text-ink-3" style="font-size:13.5px">Najd</div>
+          <div class="grow center text-ink-3" style="font-size:13.5px">Hail</div>
+        </div>
+      </div>
+      <div class="card p-24">
+        <div class="label mb-4">Data room readiness</div>
+        <div class="t-h2 mb-24">31 of 40 documents</div>
+        <div class="flex clip mb-20" style="height:14px;border-radius:999px">
+          <div style="width:62%;background:var(--green-ink)"></div>
+          <div style="width:15%;background:var(--green)"></div>
+          <div style="width:10%;background:var(--series-4)"></div>
+          <div style="width:13%;background:var(--skeleton)"></div>
+        </div>
+        <div class="flex col gap-10">
+          <div class="flex items-center gap-10" style="font-size:13.5px"><div style="width:12px;height:12px;border-radius:3px;background:var(--green-ink);flex:0 0 12px"></div><div class="grow">Approved</div><div class="mono tnum" style="font-size:13px">25</div></div>
+          <div class="flex items-center gap-10" style="font-size:13.5px"><div style="width:12px;height:12px;border-radius:3px;background:var(--green);flex:0 0 12px"></div><div class="grow">In review</div><div class="mono tnum" style="font-size:13px">6</div></div>
+          <div class="flex items-center gap-10" style="font-size:13.5px"><div style="width:12px;height:12px;border-radius:3px;background:var(--series-4);flex:0 0 12px"></div><div class="grow">Requested</div><div class="mono tnum" style="font-size:13px">4</div></div>
+          <div class="flex items-center gap-10" style="font-size:13.5px"><div style="width:12px;height:12px;border-radius:3px;background:var(--skeleton);flex:0 0 12px"></div><div class="grow">Not started</div><div class="mono tnum" style="font-size:13px">5</div></div>
+        </div>
+      </div>
+    </div>
+    <div class="grid gap-16" style="--col:280px">
+      <div class="fill p-24">
+        <div class="t-h3 mb-12">Rules</div>
+        <ul class="list">
+          <li>Bars start at zero. Always.</li>
+          <li>Label the bar directly rather than forcing a trip to the legend.</li>
+          <li>Five series is the ceiling. Beyond that, group into "Other".</li>
+          <li>Mono with tabular figures on every axis and value.</li>
+        </ul>
+      </div>
+      <div class="fill-critical p-24">
+        <div class="t-h3 mb-12">Never</div>
+        <ul class="list">
+          <li>Donut charts with more than three slices.</li>
+          <li>Dual axes, 3D bars, drop shadows on data.</li>
+          <li>Status colour on a series that is not a status.</li>
+          <li>Colour as the only difference between two series in print.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="app" class="section">
+    <div class="eyebrow mb-12">09</div>
+    <h2 class="t-h1 m-0 mb-16">App design</h2>
+    <p class="lede m-0 mb-32">Three reference screens assembled entirely from the components above: nothing here is bespoke. Desktop is sidebar plus content on a 12-column grid; mobile drops to one column with the nav in a drawer.</p>
+
+    <div class="label mb-12">Desktop · portfolio overview</div>
+    <div class="clip mb-48" style="border:1px solid var(--rule-strong);border-radius:14px;box-shadow:0 2px 4px rgba(30,35,32,.06),0 18px 44px rgba(30,35,32,.10)">
+      <div class="flex items-center gap-8" style="padding:12px 16px;background:var(--surface);border-bottom:1px solid var(--rule)">
+        <div style="width:11px;height:11px;border-radius:999px;background:var(--rule-strong)"></div>
+        <div style="width:11px;height:11px;border-radius:999px;background:var(--rule-strong)"></div>
+        <div style="width:11px;height:11px;border-radius:999px;background:var(--rule-strong)"></div>
+      </div>
+      <div class="flex" style="min-height:520px;background:var(--ground)">
+        <div class="flex col gap-4" style="flex:0 0 216px;border-inline-end:1px solid var(--rule);background:var(--surface);padding:20px 12px">
+          <div class="flex items-center gap-10" style="padding:0 12px 20px">
+            <div class="flex items-center fw-700" style="width:26px;height:26px;border-radius:6px;background:var(--green-ink);justify-content:center;color:var(--on-green-ink);font-size:14px">A</div>
+            <div class="fw-700" style="font-size:15.5px;letter-spacing:-0.01em">Altorabi</div>
+          </div>
+          <div class="nav-item text-green-ink fw-700" style="background:var(--green-wash)">Portfolio</div>
+          <div class="nav-item text-ink-2">Data room</div>
+          <div class="nav-item text-ink-2">Investors</div>
+          <div class="nav-item text-ink-2">Reports</div>
+          <div class="nav-item text-ink-2">Settings</div>
+        </div>
+        <div class="cell p-32">
+          <div class="flex wrap mb-32 gap-16" style="justify-content:space-between;align-items:flex-start">
+            <div>
+              <div class="label mb-6">Fund I</div>
+              <div class="t-h1">Portfolio</div>
+            </div>
+            <div class="flex gap-12">
+              <button class="btn-base btn-secondary fw-700" style="padding:12px 18px">Export</button>
+              <button class="btn-base btn-primary fw-700" style="padding:12px 18px">Add company</button>
+            </div>
+          </div>
+          <div class="grid mb-32 gap-16" style="--col:150px">
+            <div class="card p-20"><div class="label mb-8">Deployed</div><div class="mono tnum" style="font-size:22px">41.5M</div></div>
+            <div class="card p-20"><div class="label mb-8">Companies</div><div class="mono tnum" style="font-size:22px">3</div></div>
+            <div class="card p-20"><div class="label mb-8">Docs ready</div><div class="mono tnum" style="font-size:22px">31/40</div></div>
+            <div class="card p-20"><div class="label mb-8">At risk</div><div class="mono tnum" style="font-size:22px;color:var(--serious)">1</div></div>
+          </div>
+          <div class="card clip">
+            <div class="thead btn-md">
+              <div class="cell-2">Company</div><div class="cell">Stage</div><div class="cell">Status</div><div class="cell" style="text-align:end">Invested</div>
+            </div>
+            <div class="tr tr-data">
+              <div class="cell-2">Riyadh Logistics Co.</div><div class="cell text-ink-2">Series A</div>
+              <div class="cell"><span class="pill tone-success fw-700" style="font-size:13px;padding:4px 10px">✓ Complete</span></div>
+              <div class="cell num">12,480,000</div>
+            </div>
+            <div class="tr tr-data">
+              <div class="cell-2">Najd Agritech</div><div class="cell text-ink-2">Seed</div>
+              <div class="cell"><span class="pill tone-warning fw-700" style="font-size:13px;padding:4px 10px">! In review</span></div>
+              <div class="cell num">940,250</div>
+            </div>
+            <div class="tr tr-data">
+              <div class="cell-2">Hail Cold Chain</div><div class="cell text-ink-2">Series B</div>
+              <div class="cell"><span class="pill tone-serious fw-700" style="font-size:13px;padding:4px 10px">▲ At risk</span></div>
+              <div class="cell num">28,100,000</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="grid gap-32" style="--col:290px">
+      <div>
+        <div class="label mb-12">Mobile · company detail</div>
+        <div class="clip" style="max-width:340px;border:1px solid var(--rule-strong);border-radius:24px;background:var(--ground);box-shadow:0 18px 44px rgba(30,35,32,.10)">
+          <div class="flex items-center p-16 gap-12" style="border-bottom:1px solid var(--rule)">
+            <button aria-label="Back" class="btn-icon">←</button>
+            <div class="cell fw-700" style="font-size:16px">Riyadh Logistics</div>
+            <button aria-label="More actions" class="btn-icon">···</button>
+          </div>
+          <div class="flex col gap-16" style="padding:20px 16px">
+            <span class="caption tone-success gap-6" style="align-self:flex-start;display:inline-flex;padding:6px 14px;border-radius:999px">✓ Complete</span>
+            <div class="grid gap-12" style="grid-template-columns:1fr 1fr">
+              <div class="card p-16"><div class="label mb-6">Holding</div><div class="mono tnum" style="font-size:18px">34.0%</div></div>
+              <div class="card p-16"><div class="label mb-6">Invested</div><div class="mono tnum" style="font-size:18px">12.48M</div></div>
+            </div>
+            <div class="card clip">
+              <div class="label" style="padding:12px 16px;background:var(--surface)">Documents</div>
+              <div class="flex" style="justify-content:space-between;padding:14px 16px;border-top:1px solid var(--rule);font-size:15px"><span>Term sheet</span><span class="text-success fw-600">✓</span></div>
+              <div class="flex" style="justify-content:space-between;padding:14px 16px;border-top:1px solid var(--rule);font-size:15px"><span>Board minutes</span><span class="fw-600" style="color:var(--warning)">!</span></div>
+            </div>
+            <button class="btn-primary fw-600" style="font-family:inherit;font-size:15.5px;min-height:48px;border-radius:6px;cursor:pointer;width:100%">Add document</button>
+          </div>
+        </div>
+      </div>
+      <div>
+        <div class="label mb-12">Arabic · same screen, mirrored</div>
+        <div dir="rtl" class="clip" style="max-width:340px;border:1px solid var(--rule-strong);border-radius:24px;background:var(--ground);box-shadow:0 18px 44px rgba(30,35,32,.10)">
+          <div class="flex items-center p-16 gap-12" style="border-bottom:1px solid var(--rule)">
+            <button aria-label="رجوع" class="btn-icon">→</button>
+            <div class="cell fw-700" style="font-size:17px">الرياض للخدمات اللوجستية</div>
+            <button aria-label="إجراءات إضافية" class="btn-icon">···</button>
+          </div>
+          <div class="flex col gap-16" style="padding:20px 16px">
+            <span class="tone-success fw-600 gap-6" style="align-self:flex-start;display:inline-flex;font-size:14px;padding:6px 14px;border-radius:999px">✓ مكتمل</span>
+            <div class="grid gap-12" style="grid-template-columns:1fr 1fr">
+              <div class="card p-16"><div class="text-ink-3 fw-600 mb-6" style="font-size:12.5px">الحصة</div><div class="mono tnum" style="font-size:18px">34.0%</div></div>
+              <div class="card p-16"><div class="text-ink-3 fw-600 mb-6" style="font-size:12.5px">قيمة الاستثمار</div><div class="mono tnum" style="font-size:18px">12.48M</div></div>
+            </div>
+            <div class="card clip">
+              <div class="text-ink-3 fw-600" style="padding:12px 16px;background:var(--surface);font-size:12.5px">المستندات</div>
+              <div class="flex" style="justify-content:space-between;padding:14px 16px;border-top:1px solid var(--rule);font-size:16px"><span>خطاب الشروط</span><span class="text-success fw-600">✓</span></div>
+              <div class="flex" style="justify-content:space-between;padding:14px 16px;border-top:1px solid var(--rule);font-size:16px"><span>محاضر المجلس</span><span class="fw-600" style="color:var(--warning)">!</span></div>
+            </div>
+            <button class="btn-primary fw-600" style="font-family:inherit;font-size:16px;min-height:48px;border-radius:6px;cursor:pointer;width:100%">إضافة مستند</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="rtl" class="section">
+    <div class="eyebrow mb-12">10</div>
+    <h2 class="t-h1 m-0 mb-16">Arabic and RTL</h2>
+    <p class="lede m-0 mb-32">Arabic is a first-class language here, not a translation layer. Build both directions from the first commit — retrofitting RTL is a rewrite, every time.</p>
+    <div class="grid mb-24 gap-16" style="--col:280px">
+      <div class="card p-24">
+        <div class="t-h3 mb-12">Logical properties only</div>
+        <div class="mono text-ink-2" style="font-size:12px;line-height:1.8">margin-inline-start<br>padding-inline-end<br>border-inline-start<br>inset-inline-start<br>text-align: start</div>
+        <p class="text-ink-3" style="font-size:13.5px;line-height:1.5;margin:16px 0 0">Never <span class="mono" style="font-size:12px">margin-left</span>. One physical property and the Arabic layout breaks silently.</p>
+      </div>
+      <div class="card p-24">
+        <div class="t-h3 mb-12">Mirrors</div>
+        <ul class="list">
+          <li>Back, forward, next, previous arrows.</li>
+          <li>Progress and stepper direction.</li>
+          <li>Sidebar, drawer and breadcrumb order.</li>
+          <li>Chart reading direction, not the chart's own axis maths.</li>
+        </ul>
+      </div>
+      <div class="card p-24">
+        <div class="t-h3 mb-12">Does not mirror</div>
+        <ul class="list">
+          <li>The logo and the mark.</li>
+          <li>Clocks, play and pause, media transport.</li>
+          <li>Numbers, currency figures, phone numbers, code.</li>
+          <li>Checkmarks, warning glyphs, brand imagery.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="fill p-24">
+      <div class="t-h3 mb-12">Copy is written, not translated</div>
+      <p class="text-ink-2 m-0" style="font-size:13.5px;line-height:1.6;max-width:68ch">Arabic runs 20–30% longer than English. Buttons must flex, never fix their width. Write the Arabic natively in Modern Standard Arabic — formal enough for a board paper, plain enough to read once. Machine translation shows immediately and costs credibility.</p>
+    </div>
+  </section>
+
+  <section id="a11y" class="section">
+    <div class="eyebrow mb-12">11</div>
+    <h2 class="t-h1 m-0 mb-16">Accessibility</h2>
+    <p class="lede m-0 mb-32">WCAG 2.2 AA is the floor, not the goal. Every ratio in §02 is measured, not estimated.</p>
+    <div class="card clip">
+      <div class="thead" style="padding:12px 24px"><div style="flex:0 0 150px">Requirement</div><div class="grow">Rule</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 150px">Text contrast</div><div class="grow text-ink-2">4.5:1 for body, 3:1 for text at 24px+ or 19px+ bold.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 150px">Non-text contrast</div><div class="grow text-ink-2">3:1 for input borders, focus rings, icons carrying meaning.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 150px">Hit area</div><div class="grow text-ink-2">44×44px minimum on every interactive target, including icon-only buttons.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 150px">Focus visible</div><div class="grow text-ink-2">2px ring, 2px offset, --green-ink on light and #7FD094 on dark. Never remove the outline.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 150px">Never colour alone</div><div class="grow text-ink-2">Status always carries an icon and a word alongside the colour.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 150px">Reduced motion</div><div class="grow text-ink-2">Honour prefers-reduced-motion. Transitions 150–250ms, ease-out, and never longer than 400ms.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 150px">Opacity on text</div><div class="grow text-ink-2">Forbidden. Step down to --ink-2 or --ink-3, which keep their measured ratios.</div></div>
+    </div>
+  </section>
+
+  <section id="voice" class="section">
+    <div class="eyebrow mb-12">12</div>
+    <h2 class="t-h1 m-0 mb-16">Voice in the interface</h2>
+    <p class="lede m-0 mb-32">Evidence, then the claim. Say what happened, what it means, and what to do next — in that order, in as few words as carry it.</p>
+    <div class="card clip">
+      <div class="thead" style="padding:12px 24px"><div style="flex:0 0 110px">Where</div><div class="grow">Instead of</div><div class="grow">Write</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 110px">Button</div><div class="grow text-critical">Submit</div><div class="grow text-success">Publish data room</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 110px">Error</div><div class="grow text-critical">Invalid input.</div><div class="grow text-success">That file is 48 MB. The limit is 25 MB — compress it or split it in two.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 110px">Empty state</div><div class="grow text-critical">Nothing to see here!</div><div class="grow text-success">No documents yet. This section holds board resolutions.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 110px">Confirm</div><div class="grow text-critical">Are you sure?</div><div class="grow text-success">Delete Riyadh Logistics and its 14 documents? This cannot be undone.</div></div>
+      <div class="tr tr-spec"><div class="fw-600" style="flex:0 0 110px">Setting</div><div class="grow text-critical">Enable webhook notifications</div><div class="grow text-success">Notify the board</div></div>
+    </div>
+  </section>
+
+  <section id="tokens" class="mb-64">
+    <div class="eyebrow mb-12">13</div>
+    <h2 class="t-h1 m-0 mb-16">Tokens</h2>
+    <p class="lede m-0 mb-24">The full token block lives in Brand Book §12. Copy it whole and verbatim. Components read tokens; they never carry a literal hex value. These are the names a model must use.</p>
+    <div class="p-32 theme-ground" data-theme="dark" style="border-radius:14px;overflow-x:auto">
+      <pre class="mono text-ink-2 m-0" style="font-size:12.5px;line-height:1.85">:root {
+  <span class="text-green-ink">--green</span>: #64C379;        <span style="color:#66716B">/* fill only, never text on light */</span>
+  <span class="text-green-ink">--green-ink</span>: #1F7346;    <span style="color:#66716B">/* green text, primary button, focus */</span>
+  <span class="text-green-ink">--green-wash</span>: #E6F3EA;
+  <span class="text-green-ink">--char</span>: #2A2A33;
+  <span class="text-green-ink">--night</span>: #1A1B21;
+
+  <span class="text-green-ink">--ground</span>: #FFFFFF;
+  <span class="text-green-ink">--surface</span>: #F1F4F2;
+  <span class="text-green-ink">--rule</span>: #E1E7E2;
+  <span class="text-green-ink">--rule-strong</span>: #CBD4CE;
+
+  <span class="text-green-ink">--ink</span>: #1E2320;
+  <span class="text-green-ink">--ink-2</span>: #4F5A54;
+  <span class="text-green-ink">--ink-3</span>: #66716B;
+
+  <span class="text-green-ink">--success</span>: #0A7E3A;   <span class="text-green-ink">--success-bg</span>: #E4F3E9;
+  <span class="text-green-ink">--warning</span>: #935B00;   <span class="text-green-ink">--warning-bg</span>: #F8EFDC;
+  <span class="text-green-ink">--serious</span>: #AF4803;   <span class="text-green-ink">--serious-bg</span>: #FAEBE0;
+  <span class="text-green-ink">--critical</span>: #B32228;  <span class="text-green-ink">--critical-bg</span>: #FAE7E7;
+
+  <span class="text-green-ink">--r-sm</span>: 6px;  <span class="text-green-ink">--r-md</span>: 10px;  <span class="text-green-ink">--r-lg</span>: 14px;  <span class="text-green-ink">--r-pill</span>: 999px;
+  <span class="text-green-ink">--e-1</span>: 0 1px 2px rgba(30,35,32,.05);
+  <span class="text-green-ink">--e-2</span>: 0 1px 2px rgba(30,35,32,.04), 0 8px 24px rgba(30,35,32,.06);
+  <span class="text-green-ink">--e-3</span>: 0 2px 4px rgba(30,35,32,.06), 0 18px 44px rgba(30,35,32,.10);
+}</pre>
+    </div>
+  </section>
+
+  <footer class="flex wrap text-ink-3 gap-24" style="border-top:1px solid var(--rule);padding-top:32px;justify-content:space-between;font-size:13.5px;line-height:1.5">
+    <div>Altorabi Design Guide v1.0 · companion to Brand Book v3.0</div>
+    <div>Where this guide and the brand book disagree, the brand book wins.</div>
+  </footer>
+
+</main>
+</body>
+</html>

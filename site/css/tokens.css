@@ -1,0 +1,51 @@
+/* Altorabi tokens — Brand Book §12 / Design Guide §13.
+   Components read these; they never carry a literal hex value. */
+:root {
+  --green: #64C379;        /* fill only, never text on light */
+  --green-ink: #1F7346;    /* green text, primary button, focus */
+  --green-wash: #E6F3EA;
+  --char: #2A2A33;
+  --night: #1A1B21;
+
+  --ground: #FFFFFF;
+  --surface: #F1F4F2;
+  --rule: #E1E7E2;
+  --rule-strong: #CBD4CE;
+
+  --ink: #1E2320;
+  --ink-2: #4F5A54;
+  --ink-3: #66716B;
+
+  --success: #0A7E3A;   --success-bg: #E4F3E9;
+  --warning: #935B00;   --warning-bg: #F8EFDC;
+  --serious: #AF4803;   --serious-bg: #FAEBE0;
+  --critical: #B32228;  --critical-bg: #FAE7E7;
+
+  --r-sm: 6px;  --r-md: 10px;  --r-lg: 14px;  --r-pill: 999px;
+  --e-1: 0 1px 2px rgba(30,35,32,.05);
+  --e-2: 0 1px 2px rgba(30,35,32,.04), 0 8px 24px rgba(30,35,32,.06);
+  --e-3: 0 2px 4px rgba(30,35,32,.06), 0 18px 44px rgba(30,35,32,.10);
+
+  /* Pairings named in the guide but not in the §12 block */
+  --on-green-ink: #FFFFFF;   /* text on a Green Ink fill (§06 Buttons) */
+  --on-critical: #FFFFFF;    /* text on a Critical fill (§06 Destructive) */
+  --series-4: #A9B7AE;       /* §08 chart series 4 */
+  --series-5: #C3E8CE;       /* §08 chart series 5 */
+  --skeleton: #E8EDEA;       /* §06 loading skeleton bars */
+}
+
+/* Dark theme, values from Design Guide §03 and §06 */
+[data-theme="dark"] {
+  --ground: #131519;
+  --rule: #2B2F31;
+  --rule-strong: #3A4043;
+  --ink: #E9EFE9;
+  --ink-2: #AAB5AE;
+  --ink-3: #8B968F;
+  --green-ink: #7FD094;      /* also the dark focus ring */
+  --on-green-ink: #12200F;   /* white on #7FD094 is 1.85:1; this is 9.16:1 */
+  --success: #67D283;
+  --warning: #F2AF48;
+  --serious: #F99262;
+  --critical: #F97770;
+}

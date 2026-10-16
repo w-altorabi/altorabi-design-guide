@@ -1,0 +1,14 @@
+@font-face{font-family:"STC";src:url("../fonts/STC-Light.ttf") format("truetype");font-weight:300;font-style:normal;font-display:swap}
+@font-face{font-family:"STC";src:url("../fonts/STC-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+@font-face{font-family:"STC";src:url("../fonts/STC-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}
+
+body{margin:0;background:var(--ground);color:var(--ink);font-family:"STC","IBM Plex Sans",Helvetica,Arial,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:var(--green-ink);text-decoration:none}
+a:hover{color:var(--ink);text-decoration:underline}
+
+/* Arabic: face applied by direction, never tracked */
+[dir="rtl"]{font-family:"STC","IBM Plex Sans Arabic","Segoe UI",Tahoma,sans-serif;line-height:1.75}
+[dir="rtl"] *{letter-spacing:normal !important}
+
+:focus-visible{outline:2px solid var(--green-ink);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){*{animation:none !important;transition:none !important}}
